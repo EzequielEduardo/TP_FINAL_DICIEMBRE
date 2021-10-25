@@ -1,0 +1,26 @@
+- agregar anulacion de compra
+- agregar anulacion de venta
+- agregar campo Factura de Venta Y factura de compra
+- meter setprecision al mostrar valores float ( compra ,venta, stock valorizado)
+- actualizar diagrama. 
+- agregrar modificar compra
+- agregrar modificar venta
+- agregar categoria y marca a atributos de articulo, carga y mostrar.
+- abrir menu en gestion de compras:
+carga, listar todas , modificacion, anulacion, Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura
+
+- abrir menu en gestion de ventas:
+carga, listar todas , modificacion, anulacion, Consulta de vta valorizadas a una fecha determinada,  listar x categoria, listar x factura
+
+
+- agregar las consultas que faltan enGestion de inventario:
+LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA
+lISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UN PRODUCTO"
+lISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"
+
+
+Validaciones:
+- Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
+- Al cargar la venta el cliente ingresado existe en el maestro
+- Al cargar la compra el proveedoringresado existe en el maestro
+
