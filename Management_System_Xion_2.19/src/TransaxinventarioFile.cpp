@@ -63,7 +63,7 @@ int TransaxinventarioFile::getStock(){
         if(p==NULL) return 0;
         fseek(p, -sizeof (TransaxInventario), 2);
         fread(&datos, sizeof (TransaxInventario), 1, p);
-        system("pause");
+       // system("pause");
 
         return datos.getStock();
 }

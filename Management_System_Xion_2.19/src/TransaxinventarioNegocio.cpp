@@ -3,31 +3,30 @@
 #include "Articulo.h"
 #include "ArticuloFile.h"
 //METODOS TRANSAX
-void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario &datos)
+void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario &compra_vta)
 {
-    Articulo obj;
     TransaxinventarioFile archivo;
 	ArticuloFile reg;
 
 	int stock=archivo.getStock();
 
-    if(tipoTrans==0)
+    if(tipoTrans==0) // 0 es venta
     {
-        datos.setTipoTransax(0);
-        stock-=datos.getTRCantidad();
+        compra_vta.setTipoTransax(0);
+        stock-=compra_vta.getTRCantidad();
 
     }
     else
     {
-        datos.setTipoTransax(1);
-        stock+=datos.getTRCantidad();
+        compra_vta.setTipoTransax(1); //1 es compra
+        stock+=compra_vta.getTRCantidad();
     }
-        datos.setStock(stock);
+        compra_vta.setStock(stock);
 
-        float precioOK= reg.getPrecioArticulo(datos.getTRID_Articulo());
+        float precioOK= reg.getPrecioArticulo(compra_vta.getTRID_Articulo());
         float stockValorizado=stock*precioOK;
-        datos.setStockValorizado(stockValorizado);
-        archivo.grabarDatosInventario(datos);
+        compra_vta.setStockValorizado(stockValorizado);
+        archivo.grabarDatosInventario(compra_vta);
 }
 
 int TransaxinventarioNegocio::CantidadDeTransax()
@@ -127,9 +126,11 @@ void TransaxinventarioNegocio::MostrarStockxFecha(TransaxInventario reg){
 			if(reg.getFechaTransax()==vectorStock[x].getFechaTransax() &&
 				strcmp(reg.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
 				cout<<"STOCK: "<<vectorStock[x].getStock()<<endl;
 				cout<<"STOCK VALORIZADO: "<<vectorStock[x].getStockValorizado()<<endl;
-				system("pause");
+				//system("pause");
 			}
 }
 }
@@ -143,6 +144,8 @@ void TransaxinventarioNegocio::MostrarVtasxFecha(TransaxInventario reg){
 				strcmp(reg.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 &&
 				strcmp("venta",vectorStock[x].getTipoTransax())==0){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
 				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
 				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
 				system("pause");

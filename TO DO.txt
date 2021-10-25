@@ -5,7 +5,7 @@
 - actualizar diagrama. 
 - agregrar modificar compra
 - agregrar modificar venta
-- agregar categoria y marca a atributos de articulo, carga y mostrar.
+
 - abrir menu en gestion de compras:
 carga, listar todas , modificacion, anulacion, Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura.
 
@@ -24,4 +24,10 @@ Validaciones:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 - Al cargar la venta el cliente ingresado existe en el maestro
 - Al cargar la compra el proveedoringresado existe en el maestro
+- Al cargar marca validar con las existentes en el master
+- Al cargar categoria Validar con existentes en el master
+- permiter meter fecha 01, que sea lo mismo que poner 1.
 
+
+HECHO:
+- agregar categoria y marca a atributos de articulo, carga y mostrar.
