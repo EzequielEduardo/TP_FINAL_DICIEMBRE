@@ -18,6 +18,7 @@ class TransaxInventario
 		char nroFactura[15];
 		char categoria[20];
 		char marca[20];
+		bool status;
 
 
 	public:
@@ -34,6 +35,7 @@ class TransaxInventario
  		void setNroFactura(const char* );
  		void setCategoria(const char* );
 		void setMarca(const char* );
+		void setStatus(bool );
 
 		//GETS
         const char*  getTRID_Articulo();
@@ -47,6 +49,7 @@ class TransaxInventario
 		const char*  getNroFactura();
         const char*  getCategoria();
         const char*  getMarca();
+		bool getStatus();
 
         //CONSTRUCTOR
 		TransaxInventario(){};

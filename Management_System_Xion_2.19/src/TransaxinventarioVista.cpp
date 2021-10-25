@@ -13,7 +13,8 @@ void TransaxinventarioVista::MostrarInventario(){
     TransaxInventario *vectorStock;
 
     vectorStock=negocio.Cargar_Vector_de_Stocks();
-
+		cout<<"LISTAR TODAS LAS TRANSACCIONES DEL STOCK COMPLETO"<<endl;
+		cout<<endl;
         for(int x;x<negocio.CantidadDeTransax();x++){
         cout<< "ID_Articulo: "<<vectorStock[x].getTRID_Articulo() <<endl;
 		cout<< "Fecha de Stock: ";vectorStock[x].getFechaTransax().MostrarFecha();
@@ -48,7 +49,7 @@ char CODEART[20];
 
 			cout<<"INGRESE CODIGO DE ARTICULO: "<<endl;
 			cin>>CODEART;
-
+			cout<<endl;
 			obj.setTRID_Articulo(CODEART);
 TransaxinventarioNegocio obj1;
 
@@ -74,7 +75,7 @@ char CODEART[20];
 
 			cout<<"INGRESE CODIGO DE ARTICULO: "<<endl;
 			cin>>CODEART;
-
+			cout<<endl;
 			obj.setTRID_Articulo(CODEART);
 TransaxinventarioNegocio obj1;
 

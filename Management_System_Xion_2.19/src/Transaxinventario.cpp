@@ -15,6 +15,7 @@
 		void TransaxInventario::setNroFactura(const char* cadena){strcpy(nroFactura,cadena);}
 		void TransaxInventario::setCategoria(const char* cadena){strcpy(categoria,cadena);}
 		void TransaxInventario::setMarca(const char* cadena){strcpy(marca,cadena);}
+		void TransaxInventario::setStatus(bool _status){status=_status;}
 
         void TransaxInventario::setTipoTransax(bool n){
 			//const char* venta[7]={ "venta\0"};
@@ -40,3 +41,4 @@
         const char*  TransaxInventario::getNroFactura(){return nroFactura;}
         const char*  TransaxInventario::getCategoria(){return categoria;}
 		const char*  TransaxInventario::getMarca(){return marca;}
+		bool 		 TransaxInventario::getStatus(){return status;}

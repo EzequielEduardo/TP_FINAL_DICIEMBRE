@@ -20,6 +20,10 @@ lISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"
 
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
 
+- agregar en ventas el campo "Compra valorizada"= precio x Cantidad
+- agregar en ventas el campo "Venta valorizada"= precio x Cantidad
+
+
 Validaciones:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 - Al cargar la venta el cliente ingresado existe en el maestro
