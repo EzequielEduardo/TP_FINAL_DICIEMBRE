@@ -12,17 +12,16 @@
 		void TransaxInventario::setStock(int n){stock=n;}
         void TransaxInventario::setStockValorizado(float n){stockValorizado=n;}
         void TransaxInventario::setPrecioArt(float n){precioDeArt=n;}
-
-
+		void TransaxInventario::setNroFactura(const char* cadena){strcpy(nroFactura,cadena);}
+		void TransaxInventario::setCategoria(const char* cadena){strcpy(categoria,cadena);}
+		void TransaxInventario::setMarca(const char* cadena){strcpy(marca,cadena);}
 
         void TransaxInventario::setTipoTransax(bool n){
-            const char* venta[7]={ "venta\0"};
-           const char* compra[7]={"compra\0"};
-                 if(n==0)strcpy(tipoTransax,"venta\0");
-            if(n==1)strcpy(tipoTransax,"compra\0");
+			//const char* venta[7]={ "venta\0"};
+            //const char* compra[7]={"compra\0"};
+               if(n==0)strcpy(tipoTransax,"venta\0");
+				if(n==1)strcpy(tipoTransax,"compra\0");
             }
-
-//const char *archivo = "produccion.dat";
 
 
         TransaxInventario::TransaxInventario(int d,int m,int a){
@@ -31,9 +30,13 @@
             }
 
         const char*  TransaxInventario::getTRID_Articulo(){return trid_Articulo;}
+		const char*  TransaxInventario::getTipoTransax(){return tipoTransax;}
         int          TransaxInventario::getTRCantidad(){return trcantidad;}
         float        TransaxInventario::getTRprecioUnitario(){return trprecioUnitario;}
 		Fecha        TransaxInventario::getFechaTransax(){return fechaTransax;}
 		int          TransaxInventario::getStock(){return stock;}
         float        TransaxInventario::getStockValorizado(){return stockValorizado;}
         float        TransaxInventario::getPrecioArt(){return precioDeArt;}
+        const char*  TransaxInventario::getNroFactura(){return nroFactura;}
+        const char*  TransaxInventario::getCategoria(){return categoria;}
+		const char*  TransaxInventario::getMarca(){return marca;}

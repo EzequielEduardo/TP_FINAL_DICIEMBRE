@@ -7,7 +7,7 @@
 - agregrar modificar venta
 - agregar categoria y marca a atributos de articulo, carga y mostrar.
 - abrir menu en gestion de compras:
-carga, listar todas , modificacion, anulacion, Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura
+carga, listar todas , modificacion, anulacion, Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura.
 
 - abrir menu en gestion de ventas:
 carga, listar todas , modificacion, anulacion, Consulta de vta valorizadas a una fecha determinada,  listar x categoria, listar x factura
@@ -18,6 +18,7 @@ LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA
 lISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UN PRODUCTO"
 lISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"
 
+-Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
 
 Validaciones:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro

@@ -15,6 +15,10 @@ class TransaxInventario
         int stock;
         float stockValorizado;
         float precioDeArt;
+		char nroFactura[15];
+		char categoria[20];
+		char marca[20];
+
 
 	public:
 		//SETS
@@ -27,16 +31,22 @@ class TransaxInventario
         void setStock(int);
         void setStockValorizado(float);
         void setPrecioArt(float);
+ 		void setNroFactura(const char* );
+ 		void setCategoria(const char* );
+		void setMarca(const char* );
 
 		//GETS
         const char*  getTRID_Articulo();
-        const char*  getTipoTransax(){return tipoTransax;};
+        const char*  getTipoTransax();
         int getTRCantidad();
         float getTRprecioUnitario();
 		Fecha getFechaTransax();
         int getStock();
         float getStockValorizado();
         float getPrecioArt();
+		const char*  getNroFactura();
+        const char*  getCategoria();
+        const char*  getMarca();
 
         //CONSTRUCTOR
 		TransaxInventario(){};

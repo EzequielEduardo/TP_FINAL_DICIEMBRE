@@ -96,6 +96,14 @@ bool ArticuloVista::cargarArticulos()
     cin>>decimal;
         datos.setprecioUnitario(decimal);
 
+    cout<<"Marca: ";
+        negocio.cargarCadena(cadena,20);
+        datos.setMarca(cadena);
+
+    cout<<"Categoria: ";
+        negocio.cargarCadena(cadena,20);
+        datos.setCategoria(cadena);
+
     return negocio.guardarDatos(datos);
 
 }
@@ -110,8 +118,8 @@ void ArticuloVista::mostrarArticulos()
         for(int x;x<negocio.CantidadDeArticulos();x++){
         cout<< "ID_Articulo: "<<vectorArticulos[x].getID_Articulo() <<endl;
         cout<< "Precio Unitario de lista: "<<vectorArticulos[x].getprecioUnitario() <<endl;
-
-
+        cout<< "Marca: "<<vectorArticulos[x].getMarca()<<endl;
+        cout<< "Categoria: "<<vectorArticulos[x].getCategoria()<<endl;
         cout<< "-------------------------"<<endl;}
 
     delete vectorArticulos;
