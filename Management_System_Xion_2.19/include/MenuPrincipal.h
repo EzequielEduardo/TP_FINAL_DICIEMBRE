@@ -15,7 +15,8 @@ class MenuPrincipal
     void menuPrincipal();
     void submenuMaestros();
     void submenuInventarios();
-
+	void submenuCompras();
+	void submenuVentas();
 };
 
 #endif // MENUPRINCIPAL_H
