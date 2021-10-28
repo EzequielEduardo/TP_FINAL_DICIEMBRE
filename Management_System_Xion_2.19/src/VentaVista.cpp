@@ -83,6 +83,10 @@ bool VentaVista::cargarVentas()
     negocio.cargarCadena(cadena,20);
     venta.setTRID_Articulo(cadena);
 
+    cout<<"Factura de Venta: ";
+    negocio.cargarCadena(cadena,20);
+    venta.setNroFactura(cadena);
+
 	cout<<"Categoria: ";
     negocio.cargarCadena(cadena,20);
     venta.setCategoria(cadena);
@@ -113,6 +117,7 @@ bool VentaVista::mostrarVentas(){
 		cout<< "LISTADO DE VENTAS REALIZADAS"<<endl;
         for(int x;x<negocio.CantidadDeVentas();x++){
         cout<< "ID_Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
+        cout<< "Categoria: "<<vectorVentas[x].getNroFactura() <<endl;
         cout<< "Categoria: "<<vectorVentas[x].getCategoria() <<endl;
 		cout<< "Marca: "<<vectorVentas[x].getMarca() <<endl;
 		cout<< "Fecha de venta: ";vectorVentas[x].getFechaTransax().MostrarFecha();

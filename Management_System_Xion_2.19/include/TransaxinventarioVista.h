@@ -14,7 +14,7 @@ class TransaxinventarioVista
 	void MostrarInventario();
 	void MostrarStockxFecha();
 	void MostrarVtasxFecha();
-
+	void MostrarInventarioxCategoria();
 };
 
 #endif // TRANSAXINVENTARIOVISTA_H

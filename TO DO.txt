@@ -1,4 +1,3 @@
-- agregar campo Factura de Venta Y factura de compra
 - meter setprecision al mostrar valores float ( compra ,venta, stock valorizado)
 - actualizar diagrama. 
 
@@ -8,9 +7,9 @@ LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA
 LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"
 ANULAR COMPRA
 ANULAR VENTA
-modificar compra
+modificar compra 
 modificar venta
-
+Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura.
 
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
 
@@ -22,17 +21,21 @@ Validaciones:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 - Al cargar la venta el cliente ingresado existe en el maestro
 - Al cargar la compra el proveedoringresado existe en el maestro
-- Al cargar marca validar con las existentes en el master
-- Al cargar categoria Validar con existentes en el master
-- permiter meter fecha 01, que sea lo mismo que poner 1.
+- Al cargar marca validar con las existentes en el master.
+- Al cargar categoria Validar con existentes en el master.
+- permiter mostrar fecha 01, que sea lo mismo que poner 1.
 
 
 HECHO:
-- abrir menu en gestion de compras:
-carga, listar todas , modificacion, anulacion, Consulta de compras valorizadas a una fecha determinada,  listar x categoria, listar x factura.
-
-- abrir menu en gestion de ventas:
-carga, listar todas , modificacion, anulacion, Consulta de vta valorizadas a una fecha determinada,  listar x categoria, listar x factura
-- agregar categoria y marca a atributos de articulo, carga y mostrar.
-
+- abrir menu en gestion de compras
+- carga, listar todas las compras
 - agregar campo Factura de Venta Y factura de compra
+- abrir menu en gestion de ventas
+-carga, listar todas, Consulta de vta valorizadas a una fecha determinada.
+- agregar campo Factura de Venta Y factura de compra
+
+Observaciones:
+Leer file completo files
+Mejorar estetica menu
+formato de tabla en listar
+

@@ -125,7 +125,6 @@ void MenuPrincipal::submenuMaestros()
 
         }
 
-
     }
     while(opc!=0);
 }
