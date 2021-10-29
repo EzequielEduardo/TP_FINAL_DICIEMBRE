@@ -13,6 +13,8 @@ class CompraVista
     void menuCompras();
 	bool cargarCompras();
 	bool mostrarCompras();
+	void MostrarComprasxFecha();
+	void ListarComprasxFactura();
 };
 
 #endif // COMPRAVISTA_H

@@ -85,3 +85,70 @@ bool CompraVista::mostrarCompras(){
     delete vectorCompras;
 
 }
+
+
+void CompraVista::MostrarComprasxFecha(){
+TransaxinventarioNegocio obj1;
+int dia, mes, anio;
+char CODEART[20];
+			cout<<"LISTADO DE VENTAS X PRODUCTO Y FECHA"<<endl;
+			cout<<endl;
+			cout<<"INGRESE LA FECHA DE STOCK: "<<endl;
+				cout<<"Dia: ";
+				cin>>dia;
+				cout<<"Mes: ";
+				cin>>mes;
+				cout<<"Anio: ";
+				cin>>anio;
+
+			TransaxInventario obj(dia,mes,anio);
+
+			cout<<"INGRESE CODIGO DE ARTICULO: "<<endl;
+			cin>>CODEART;
+			cout<<endl;
+			obj.setTRID_Articulo(CODEART);
+
+
+TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
+
+	  for(int x=0;x<obj1.CantidadDeTransax();x++){
+			if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
+				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
+				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"CANTIDAD VALORIZADA: "<<vectorStock[x].getTRValorizada()<<endl;
+			}
+}
+
+
+}
+
+
+void CompraVista::ListarComprasxFactura(){
+TransaxinventarioNegocio obj1;
+char Invoice[30]{};
+			cout<<"INGRESE LA FACTURA A BUSCAR: "<<endl;
+			cin>>Invoice;
+			cout<<endl;
+
+
+
+TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
+
+	  for(int x=0;x<obj1.CantidadDeTransax();x++){
+			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0){
+				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"CANTIDAD VALORIZADA: "<<vectorStock[x].getTRValorizada()<<endl;
+			}
+}
+
+}

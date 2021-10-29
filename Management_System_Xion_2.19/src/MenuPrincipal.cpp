@@ -162,14 +162,14 @@ void MenuPrincipal::submenuInventarios(){
 
 		case 2:
 
-
+			obj3.MostrarInventarioxCategoria();
 			system("pause");
 			system("cls");
             break;
 
 		case 3:
 
-
+		obj3.MostrarInventarioxMarca();
 			system("pause");
 			system("cls");
             break;
@@ -212,6 +212,8 @@ void MenuPrincipal::submenuCompras(){
         cout<<"2-LISTAR COMPRAS REALIZADAS"<<endl;
 		cout<<"3-MODIFICAR FACTURAS DE COMPRAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE COMPRAS"<<endl;
+		cout<<"5-LISTAR COMPRAS X PRODUCTO Y FECHA"<<endl;
+		cout<<"6-LISTAR COMPRAS X FACTURA"<<endl;
         cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -246,6 +248,18 @@ void MenuPrincipal::submenuCompras(){
 			system("cls");
             break;
 
+		case 5:
+		obj1.MostrarComprasxFecha();
+			system("pause");
+			system("cls");
+            break;
+
+		case 6:
+		obj1.ListarComprasxFactura();
+			system("pause");
+			system("cls");
+            break;
+
         case 0:
             cout<<"-----FIN DEL PROGRAMA-----";
             break;
@@ -274,6 +288,7 @@ void MenuPrincipal::submenuVentas(){
 		cout<<"3-MODIFICAR FACTURAS DE VENTAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE VENTAS"<<endl;
 		cout<<"5-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
+		cout<<"6-LISTAR VENTAS X FACTURA"<<endl;
         cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -309,10 +324,19 @@ void MenuPrincipal::submenuVentas(){
             break;
 
 		case 5:
-
+			obj2.MostrarVtasxFecha();
 			system("pause");
 			system("cls");
             break;
+
+		case 6:
+			obj2.ListarVtasxFactura();
+			system("pause");
+			system("cls");
+            break;
+
+
+
 
 
         case 0:

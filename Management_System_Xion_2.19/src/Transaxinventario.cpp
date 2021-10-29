@@ -42,3 +42,4 @@
         const char*  TransaxInventario::getCategoria(){return categoria;}
 		const char*  TransaxInventario::getMarca(){return marca;}
 		bool 		 TransaxInventario::getStatus(){return status;}
+		float 		 TransaxInventario::getTRValorizada(){return trcantidad*trprecioUnitario;}

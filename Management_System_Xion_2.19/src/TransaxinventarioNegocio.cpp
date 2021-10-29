@@ -118,22 +118,6 @@ int TransaxinventarioNegocio::CantidadDeVentas()
 
 }
 
-void TransaxinventarioNegocio::MostrarStockxFecha(TransaxInventario reg){
-
-	TransaxInventario *vectorStock=Cargar_Vector_de_Stocks(); // vector que contiene todo el file inventario
-
-	  for(int x=0;x<CantidadDeTransax();x++){
-			if(reg.getFechaTransax()==vectorStock[x].getFechaTransax() &&
-				strcmp(reg.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
-				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
-				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
-				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
-				cout<<"STOCK: "<<vectorStock[x].getStock()<<endl;
-				cout<<"STOCK VALORIZADO: "<<vectorStock[x].getStockValorizado()<<endl;
-				//system("pause");
-			}
-}
-}
 
 void TransaxinventarioNegocio::MostrarVtasxFecha(TransaxInventario reg){
 
@@ -152,3 +136,4 @@ void TransaxinventarioNegocio::MostrarVtasxFecha(TransaxInventario reg){
 			}
 }
 }
+

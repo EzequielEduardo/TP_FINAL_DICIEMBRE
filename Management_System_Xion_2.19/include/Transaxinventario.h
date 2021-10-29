@@ -50,6 +50,7 @@ class TransaxInventario
         const char*  getCategoria();
         const char*  getMarca();
 		bool getStatus();
+		float getTRValorizada();
 
         //CONSTRUCTOR
 		TransaxInventario(){};

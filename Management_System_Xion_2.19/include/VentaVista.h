@@ -13,6 +13,8 @@ class VentaVista
     void menuVentas();
 	bool cargarVentas();
 	bool mostrarVentas();
+	void MostrarVtasxFecha();
+	void ListarVtasxFactura();
 };
 
 #endif // VENTAVISTA_H
