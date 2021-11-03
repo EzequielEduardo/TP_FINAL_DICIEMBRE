@@ -15,6 +15,7 @@ class TransaxinventarioFile
 		TransaxInventario* obtener_Datos_Compras();
 		bool grabarDatosCompraEnDisco(TransaxInventario);
 		int cantidadDeDatosComprasGrabadas();
+		const char* getFacturaCompras();
 
         //metodos para ventas
 		TransaxInventario* obtener_Datos_Ventas();

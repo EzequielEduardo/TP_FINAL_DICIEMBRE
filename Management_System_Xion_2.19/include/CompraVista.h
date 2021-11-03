@@ -15,6 +15,9 @@ class CompraVista
 	bool mostrarCompras();
 	void MostrarComprasxFecha();
 	void ListarComprasxFactura();
+	void AnularCompra();
+	void messageAnulacionOK();
+	void messageAnulacionNotOK();
 };
 
 #endif // COMPRAVISTA_H

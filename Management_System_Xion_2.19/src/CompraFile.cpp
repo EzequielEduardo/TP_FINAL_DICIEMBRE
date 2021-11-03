@@ -9,15 +9,27 @@
 
 using namespace std;
 
-  bool CompraFile::grabarEnDisco(CompraNegocio articulo){
+bool CompraFile::grabarEnDisco(TransaxInventario compra){
 
         FILE *p;
         p=fopen("Compras.dat","ab");
         if(p==NULL) return false;
-        bool escribio=fwrite(&articulo, sizeof (Articulo), 1, p);
+        bool escribio=fwrite(&compra, sizeof (compra), 1, p);
         fclose(p);
         return escribio;
     }
+
+bool CompraFile::grabarEnDisco(TransaxInventario obj,int pos){  // Sobrecarga de funciones para modificar registro
+    bool grabo;
+    FILE *p;
+    p = fopen("Compras.dat", "rb+");
+    if (p == NULL){return false;}
+    fseek(p, sizeof(obj)*pos, SEEK_SET);
+    grabo = fwrite(&obj, sizeof(obj), 1, p);
+    fclose(p);
+    return grabo;
+}
+
 
 TransaxInventario* CompraFile::obtener_Datos_Compras(){
 
@@ -55,3 +67,16 @@ TransaxInventario* CompraFile::obtener_Datos_Compras(){
         fclose(p);
         return cantidad;
     }
+
+bool CompraFile::leerCompra(TransaxInventario &reg, int pos)
+{
+
+    FILE *p;
+    p=fopen("Compras.dat", "rb");
+    if(p==NULL) return false;
+    fseek(p,sizeof(reg)*pos,0);
+    bool leyo=fread(&reg, sizeof(reg), 1, p);
+    fclose(p);
+    return leyo;
+}
+

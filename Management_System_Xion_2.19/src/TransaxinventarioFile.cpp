@@ -92,6 +92,16 @@ TransaxInventario* TransaxinventarioFile::obtener_Datos_Compras(){
         return vectorCompras;
     }
 
+const char * TransaxinventarioFile::getFacturaCompras(){
+        TransaxInventario datos;
+        FILE *p;
+        p=fopen("Compras.dat","rb");
+        if(p==NULL) return 0;
+        fseek(p, -sizeof (TransaxInventario), 2);
+        fread(&datos, sizeof (TransaxInventario), 1, p);
+
+        return datos.getNroFactura();
+}
 
 bool TransaxinventarioFile::grabarDatosCompraEnDisco(TransaxInventario compra)
 {

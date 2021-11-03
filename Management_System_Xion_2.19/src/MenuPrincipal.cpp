@@ -12,6 +12,7 @@
 #include"CompraVista.h"
 #include "VentaVista.h"
 #include"TransaxinventarioVista.h"
+#include"CompraNegocio.h"
 
 
 using namespace std;
@@ -243,6 +244,15 @@ void MenuPrincipal::submenuCompras(){
 		break;
 
 		case 4:
+			CompraNegocio obj3;
+			char Invoice[15];
+
+		cout<<"INGRESE LA FACTURA DE LA COMPRA A ELIMINAR:"; // La factura es el ID que no se repita
+		cin>>Invoice;
+
+
+
+			obj3.AnularCompra(Invoice);
 
 			system("pause");
 			system("cls");

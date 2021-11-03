@@ -60,6 +60,8 @@ bool CompraVista::cargarCompras()
 		cin>>decimal;
         compra.setTRprecioUnitario(decimal);
 
+	compra.setStatus(true);
+
     negocio.actualizarstock(1,compra); //  llamo al metodo de la clase TransaxinventarioNegocio que va a modificar el stock y stockValorizado
     return negocio.guardarDatosCompra(compra); // guarda reg en file compras.dat
 }
@@ -73,6 +75,7 @@ bool CompraVista::mostrarCompras(){
 
 		 cout<< "LISTADO DE COMPRAS REALIZADAS"<<endl;
         for(int x;x<negocio.CantidadDeCompras();x++){
+		if(vectorCompras[x].getStatus()==true){
 		cout<< "Factura de Compra: "<<vectorCompras[x].getNroFactura() <<endl;
         cout<< "ID_Articulo: "<<vectorCompras[x].getTRID_Articulo() <<endl;
         cout<< "Categoria: "<<vectorCompras[x].getCategoria() <<endl;
@@ -80,8 +83,9 @@ bool CompraVista::mostrarCompras(){
 		cout<< "Fecha de compra: ";vectorCompras[x].getFechaTransax().MostrarFecha();
         cout<< "Cantidad: "<<vectorCompras[x].getTRCantidad() <<endl;
         cout<< "Costo Unitario: "<<vectorCompras[x].getTRprecioUnitario() <<endl;
-        cout<< "-------------------------"<<endl;}
-
+        cout<< "-------------------------"<<endl;
+        }
+        }
     delete vectorCompras;
 
 }
@@ -124,8 +128,8 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que co
 			}
 }
 
-
 }
+
 
 
 void CompraVista::ListarComprasxFactura(){
@@ -134,7 +138,6 @@ char Invoice[30]{};
 			cout<<"INGRESE LA FACTURA A BUSCAR: "<<endl;
 			cin>>Invoice;
 			cout<<endl;
-
 
 
 TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
@@ -152,3 +155,42 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que co
 }
 
 }
+
+/*
+void CompraVista::AnularCompra(){
+	TransaxinventarioNegocio obj1;
+	char Invoice[15];
+
+	cout<<"INGRESE LA FACTURA DE LA COMPRA A ELIMINAR:"; // La factura es el ID que no se repita
+	cin>>Invoice;
+
+	//leer file compras o tr inventario buscando ese registro
+	// agrego metodo leer de disco con posicion especifica como parametro
+	// metodo buscar posicion en compras file
+
+	TransaxInventario *vectorCompras=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
+
+	 for(int x=0;x<obj1.CantidadDeTransax();x++){
+		if(strcmp(Invoice,vectorCompras[x].getNroFactura())==0){
+			vectorCompras[x].setStatus(false);}// si existe cambio el estado
+		}
+
+	cout<<"Cambio de estado"<<endl;
+	system("pause");
+
+	// si no lo encontro:
+	cout<<"NO EXISTE ESA FACTURA"<<endl;
+	return;
+
+}*/
+
+void CompraVista::messageAnulacionOK(){
+			cout<<"Factura Anulada"<<endl;
+			system("pause");
+}
+
+void CompraVista::messageAnulacionNotOK(){
+			cout << "No existe la Factura ingresada "<<endl;
+			system("pause");
+}
+

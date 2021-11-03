@@ -92,6 +92,8 @@ int TransaxinventarioNegocio::CantidadDeCompras()
 }
 
 
+
+
 //METODOS VENTAS
 
 bool TransaxinventarioNegocio::guardarDatosVenta(TransaxInventario venta)

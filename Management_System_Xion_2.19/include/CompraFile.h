@@ -8,9 +8,11 @@ class CompraFile
 
 	public:
 
-	bool grabarEnDisco(CompraNegocio);
+	bool grabarEnDisco(TransaxInventario);
+	bool grabarEnDisco(TransaxInventario obj,int pos);
 	TransaxInventario* obtener_Datos_Compras();
 	int  cantidadDeDatosGrabados();
+	bool leerCompra(TransaxInventario &,int pos);
 
 };
 

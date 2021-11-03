@@ -1,18 +1,13 @@
 - meter setprecision al mostrar valores float ( compra ,venta, stock valorizado)
 - actualizar diagrama. 
 
-
 - agregar las consultas que faltan:
 ANULAR COMPRA
 ANULAR VENTA 
 modificar compra 
 modificar venta
 
-
-
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
-
-
 
 Validaciones:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
@@ -22,27 +17,30 @@ Validaciones:
 - Al cargar categoria Validar con existentes en el master.
 - permiter mostrar fecha 01, que sea lo mismo que poner 1.
 
+otros cambios:
+- En revaluo de inventario, la funcion posicion va en articuloFile y
+- meter funcion de reversar anulacion
 
 HECHO:
-- abrir menu en gestion de compras
-- carga, listar todas las compras
-- agregar campo Factura de Venta Y factura de compra
-- abrir menu en gestion de ventas
--carga, listar todas, Consulta de vta valorizadas a una fecha determinada.
-- agregar campo Factura de Venta Y factura de compra
+- Abrir menu en gestion de compras
+- Carga, listar todas las compras
+- Agregar campo Factura de Venta Y factura de compra
+- Abrir menu en gestion de ventas
+- Carga, listar todas, Consulta de vta valorizadas a una fecha determinada.
+- Agregar campo Factura de Venta Y factura de compra
 - LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA
 - LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"
 - MostrarStockxFecha y MostrarVtasxFecha estan en TransaxinventarioVista pero deberian ir en Vista
-- agregar en ventas el campo "Venta valorizada"= precio x Cantidad
-- agregar en compra el campo "Compra valorizada"= precio x Cantidad
+- Agregar en ventas el campo "Venta valorizada"= precio x Cantidad
+- Agregar en compra el campo "Compra valorizada"= precio x Cantidad
 - Consulta de VENTAS valorizadas a una fecha determinada. Agregar metodo que valorice las transacciones
 - Consulta de compras valorizadas a una fecha determinada, 
-listar VTAS x factura (una factura puede tener mas de un producto asociado).
-listar COMPRAS x factura (una factura puede tener mas de un producto asociado).
+- Listar VTAS x factura (una factura puede tener mas de un producto asociado).
+- Listar COMPRAS x factura (una factura puede tener mas de un producto asociado).
 
 Observaciones:
 Leer file completo files
-Mejorar estetica menu
-formato de tabla en listar
+Mejorar estetica del menu
+Formato de tabla en listar
 - Duplica los files, compras y ventas podria usarse solo transaccion de inv.
 

@@ -114,7 +114,7 @@ bool VentaVista::mostrarVentas(){
 	TransaxinventarioNegocio negocio;
     TransaxInventario *vectorVentas;
 
-    vectorVentas=negocio.Cargar_Vector_de_Ventas();///get_compras
+    vectorVentas=negocio.Cargar_Vector_de_Ventas();///get ventas
 		cout<< "LISTADO DE VENTAS REALIZADAS"<<endl;
         for(int x;x<negocio.CantidadDeVentas();x++){
         cout<< "ID_Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
