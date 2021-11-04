@@ -88,7 +88,7 @@ void MenuPrincipal::submenuMaestros()
         cout<<"2-MAESTRO DE CLIENTES"<<endl;
 		cout<<"3-MAESTRO DE PROVEEDORES"<<endl;
 		cout<<"4-MAESTRO DE ARTICULOS"<<endl;
-        cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
+        cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
 
@@ -146,7 +146,7 @@ void MenuPrincipal::submenuInventarios(){
 		cout<<"2-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA"<<endl;
 		cout<<"3-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"<<endl;
 		cout<<"4-LISTAR STOCK X PRODUCTO Y FECHA"<<endl;
-        cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
+        cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
 
@@ -217,7 +217,7 @@ void MenuPrincipal::submenuCompras(){
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
 		cout<<"6-LISTAR COMPRAS X PRODUCTO Y FECHA"<<endl;
 		cout<<"7-LISTAR COMPRAS X FACTURA"<<endl;
-        cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
+        cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
 
@@ -314,7 +314,7 @@ void MenuPrincipal::submenuVentas(){
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
 		cout<<"6-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
 		cout<<"7-LISTAR VENTAS X FACTURA"<<endl;
-        cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
+        cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
 

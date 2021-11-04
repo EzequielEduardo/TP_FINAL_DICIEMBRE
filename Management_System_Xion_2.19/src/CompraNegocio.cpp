@@ -66,7 +66,6 @@ void CompraNegocio::AnularCompra(const char * id){
 	TransaxInventario obj;
 	CompraVista obj2;
 	int pos = buscarPosicion(id);
-	float pu=0;
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerCompra(obj,pos);
@@ -90,7 +89,6 @@ void CompraNegocio::ReversarAnulacionCompra(const char * id){
 	TransaxInventario obj;
 	CompraVista obj2;
 	int pos = buscarPosicion(id);
-	float pu=0;
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerCompra(obj,pos);

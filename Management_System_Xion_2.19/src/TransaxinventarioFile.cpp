@@ -6,13 +6,13 @@
 using namespace std;
 
 //metodos para stock
-bool TransaxinventarioFile::grabarDatosInventario(TransaxInventario compra)
+bool TransaxinventarioFile::grabarDatosInventario(TransaxInventario compra_venta)
 {
 
     FILE *p;
     p=fopen("Inventario.dat","ab");
     if(p==NULL) return false;
-    bool escribio=fwrite(&compra, sizeof (TransaxInventario), 1, p);
+    bool escribio=fwrite(&compra_venta, sizeof (TransaxInventario), 1, p);
     fclose(p);
     return escribio;
 }
@@ -56,17 +56,30 @@ int TransaxinventarioFile::cantidadDeTransaxGrabadas()
     return cantidad;
 }
 
-int TransaxinventarioFile::getStock(){
+int TransaxinventarioFile::getStock(int pos){
         TransaxInventario datos;
         FILE *p;
         p=fopen("Inventario.dat","rb");
         if(p==NULL) return 0;
-        fseek(p, -sizeof (TransaxInventario), 2);
+        fseek(p, sizeof (TransaxInventario)*pos, 0);
         fread(&datos, sizeof (TransaxInventario), 1, p);
-       // system("pause");
+
 
         return datos.getStock();
 }
+
+bool TransaxinventarioFile::leerCompra_vta(TransaxInventario &reg, int pos)
+{
+
+    FILE *p;
+    p=fopen("Inventario.dat", "rb");
+    if(p==NULL) return false;
+    fseek(p,sizeof(reg)*pos,0);
+    bool leyo=fread(&reg, sizeof(reg), 1, p);
+    fclose(p);
+    return leyo;
+}
+
 
 //metodos para compras
 

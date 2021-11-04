@@ -3,11 +3,28 @@
 #include "Articulo.h"
 #include "ArticuloFile.h"
 //METODOS TRANSAX
+int TransaxinventarioNegocio::buscarPosicion(const char *id){
+    TransaxInventario reg;
+    TransaxinventarioFile obj;
+    int pos = 0;
+    while(obj.leerCompra_vta(reg, pos)){ // Mandar a vista file
+        if (strcmp(id, reg.getTRID_Articulo()) == 0){
+            return pos;
+        }
+        pos++;
+    }
+    return -1;
+}
+
 void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario &compra_vta)
 {
     TransaxinventarioFile archivo;
 	ArticuloFile reg;
-	int stock=archivo.getStock(); // deberia darme el stock actual + la posicion en el file
+	int stock;
+	int pos = buscarPosicion(compra_vta.getTRID_Articulo());
+	if (pos >= 0){ 		//porque lo encuentra
+
+	stock=archivo.getStock(pos); // deberia darme el stock actual + la posicion en el file
 
     if(tipoTrans==0 ) // 0 es venta
     {
@@ -27,8 +44,30 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
         compra_vta.setStockValorizado(stockValorizado);
         archivo.grabarDatosInventario(compra_vta);
 
+	}
 
+	else{	// si el producto no esta en stock. Primer ingreso al stock
+		if(tipoTrans==0 ) // 0 es venta
+    {
+        compra_vta.setTipoTransax(0);
+        stock-=compra_vta.getTRCantidad();
+
+    }
+    else
+    {
+        compra_vta.setTipoTransax(1); //1 es compra
+        stock+=compra_vta.getTRCantidad();
+    }
+        compra_vta.setStock(stock);
+
+        float precioOK= reg.getPrecioArticulo(compra_vta.getTRID_Articulo());
+        float stockValorizado=stock*precioOK;
+        compra_vta.setStockValorizado(stockValorizado);
+        archivo.grabarDatosInventario(compra_vta);
+
+	}
 }
+
 
 int TransaxinventarioNegocio::CantidadDeTransax()
 {
@@ -50,6 +89,7 @@ void TransaxinventarioNegocio::cargarCadena(char *pal, int tam){
 				fflush(stdin);
 				}
 
+
 TransaxInventario* TransaxinventarioNegocio::Cargar_Vector_de_Stocks()
 {
     TransaxInventario *vectorStocks;
@@ -59,12 +99,12 @@ TransaxInventario* TransaxinventarioNegocio::Cargar_Vector_de_Stocks()
 return vectorStocks;
 }
 
-
+/*
 float getStock(){
 TransaxinventarioFile archivo;
 return archivo.getStock();
 }
-
+*/
 
 //METODOS COMPRAS
 bool TransaxinventarioNegocio::guardarDatosCompra(TransaxInventario compra)

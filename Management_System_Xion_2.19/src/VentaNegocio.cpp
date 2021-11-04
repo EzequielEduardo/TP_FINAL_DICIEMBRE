@@ -47,7 +47,6 @@ void VentaNegocio::AnularVenta(const char * id){
 	TransaxInventario obj;
 	VentaVista obj2;
 	int pos = buscarPosicion(id);
-	float pu=0;
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
@@ -70,7 +69,6 @@ void VentaNegocio::ReversarAnulacionVenta(const char * id){
 	TransaxInventario obj;
 	VentaVista obj2;
 	int pos = buscarPosicion(id);
-	float pu=0;
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
