@@ -117,7 +117,8 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que co
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
 			if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
-				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
+				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 &&
+				vectorStock[x].getStatus()==true){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
 				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
 				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
@@ -127,9 +128,7 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que co
 				cout<<"CANTIDAD VALORIZADA: "<<vectorStock[x].getTRValorizada()<<endl;
 			}
 }
-
 }
-
 
 
 void CompraVista::ListarComprasxFactura(){
@@ -143,7 +142,8 @@ char Invoice[30]{};
 TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
-			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0){
+			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0 &&
+				vectorStock[x].getStatus()==true){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
 				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
 				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
@@ -156,41 +156,17 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Compras(); // vector que co
 
 }
 
-/*
-void CompraVista::AnularCompra(){
-	TransaxinventarioNegocio obj1;
-	char Invoice[15];
-
-	cout<<"INGRESE LA FACTURA DE LA COMPRA A ELIMINAR:"; // La factura es el ID que no se repita
-	cin>>Invoice;
-
-	//leer file compras o tr inventario buscando ese registro
-	// agrego metodo leer de disco con posicion especifica como parametro
-	// metodo buscar posicion en compras file
-
-	TransaxInventario *vectorCompras=obj1.Cargar_Vector_de_Compras(); // vector que contiene todo el file inventario
-
-	 for(int x=0;x<obj1.CantidadDeTransax();x++){
-		if(strcmp(Invoice,vectorCompras[x].getNroFactura())==0){
-			vectorCompras[x].setStatus(false);}// si existe cambio el estado
-		}
-
-	cout<<"Cambio de estado"<<endl;
-	system("pause");
-
-	// si no lo encontro:
-	cout<<"NO EXISTE ESA FACTURA"<<endl;
-	return;
-
-}*/
-
 void CompraVista::messageAnulacionOK(){
 			cout<<"Factura Anulada"<<endl;
-			system("pause");
+
 }
 
 void CompraVista::messageAnulacionNotOK(){
 			cout << "No existe la Factura ingresada "<<endl;
-			system("pause");
+
 }
 
+void CompraVista::messageReversoAnulacionOK(){
+			cout<<"Se restauro la Factura anulada "<<endl;
+
+}

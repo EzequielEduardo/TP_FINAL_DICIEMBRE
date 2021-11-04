@@ -15,6 +15,9 @@ class VentaVista
 	bool mostrarVentas();
 	void MostrarVtasxFecha();
 	void ListarVtasxFactura();
+	void messageAnulacionOK();
+	void messageAnulacionNotOK();
+	void messageReversoAnulacionOK();
 };
 
 #endif // VENTAVISTA_H

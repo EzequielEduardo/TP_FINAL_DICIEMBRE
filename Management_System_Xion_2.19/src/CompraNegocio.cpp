@@ -48,8 +48,6 @@ void CompraNegocio::cargarCadena(char *pal, int tam){
 				fflush(stdin);
 				}
 
-
-
 int CompraNegocio::buscarPosicion(const char *id){
     TransaxInventario reg;
     CompraFile obj;
@@ -63,7 +61,7 @@ int CompraNegocio::buscarPosicion(const char *id){
     return -1;
 }
 
-float CompraNegocio::AnularCompra(const char * id){
+void CompraNegocio::AnularCompra(const char * id){
 	CompraFile reg;
 	TransaxInventario obj;
 	CompraVista obj2;
@@ -82,5 +80,28 @@ float CompraNegocio::AnularCompra(const char * id){
     }
     cout << endl << endl;
 
+
+}
+
+
+
+void CompraNegocio::ReversarAnulacionCompra(const char * id){
+	CompraFile reg;
+	TransaxInventario obj;
+	CompraVista obj2;
+	int pos = buscarPosicion(id);
+	float pu=0;
+	if (pos >= 0){ 		//porque lo encuentra
+
+			reg.leerCompra(obj,pos);
+			obj.setStatus(true); //camio el estado para que no lo muestre. Baja logica
+			obj2.messageReversoAnulacionOK();
+			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+		}
+	 else{
+				obj2.messageAnulacionNotOK();
+
+    }
+    cout << endl << endl;
 
 }

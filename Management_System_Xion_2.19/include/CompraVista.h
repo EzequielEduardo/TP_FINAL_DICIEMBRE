@@ -9,15 +9,14 @@ class CompraVista
 
 	public:
 
-
     void menuCompras();
 	bool cargarCompras();
 	bool mostrarCompras();
 	void MostrarComprasxFecha();
 	void ListarComprasxFactura();
-	void AnularCompra();
 	void messageAnulacionOK();
 	void messageAnulacionNotOK();
+	void messageReversoAnulacionOK();
 };
 
 #endif // COMPRAVISTA_H

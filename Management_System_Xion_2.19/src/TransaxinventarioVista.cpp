@@ -16,6 +16,7 @@ void TransaxinventarioVista::MostrarInventario(){
 		cout<<"LISTAR TODAS LAS TRANSACCIONES DEL STOCK COMPLETO"<<endl;
 		cout<<endl;
         for(int x;x<negocio.CantidadDeTransax();x++){
+			if(vectorStock[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorStock[x].getTRID_Articulo() <<endl;
 		cout<< "Nro de Factura: "<<vectorStock[x].getNroFactura() <<endl;
 		cout<< "Fecha de Stock: ";vectorStock[x].getFechaTransax().MostrarFecha();
@@ -27,6 +28,7 @@ void TransaxinventarioVista::MostrarInventario(){
         cout<< "STOCK: "<<vectorStock[x].getStock() <<endl;
         cout<< "StockValorizado: "<<vectorStock[x].getStockValorizado() <<endl;
         cout<< "-------------------------"<<endl;}
+        }
 
     delete vectorStock;
 }
@@ -59,7 +61,8 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Stocks(); // vector que con
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
 			if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
-				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
+				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0
+				&& vectorStock[x].getStatus()==true){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
 				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
 				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
@@ -86,7 +89,7 @@ void TransaxinventarioVista::MostrarInventarioxCategoria(){
 		negocio.cargarCadena(categ,20);
 
         for(int x;x<negocio.CantidadDeTransax();x++){
-		if(strcmp(categ,vectorStock[x].getCategoria())==0){
+		if(strcmp(categ,vectorStock[x].getCategoria())==0 && vectorStock[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorStock[x].getTRID_Articulo() <<endl;
 		cout<< "Nro de Factura: "<<vectorStock[x].getNroFactura() <<endl;
 		cout<< "Fecha de Stock: ";vectorStock[x].getFechaTransax().MostrarFecha();
@@ -115,7 +118,7 @@ void TransaxinventarioVista::MostrarInventarioxMarca(){
 		negocio.cargarCadena(brand,20);
 
         for(int x;x<negocio.CantidadDeTransax();x++){
-		if(strcmp(brand,vectorStock[x].getMarca())==0){
+		if(strcmp(brand,vectorStock[x].getMarca())==0 && vectorStock[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorStock[x].getTRID_Articulo() <<endl;
 		cout<< "Nro de Factura: "<<vectorStock[x].getNroFactura() <<endl;
 		cout<< "Fecha de Stock: ";vectorStock[x].getFechaTransax().MostrarFecha();

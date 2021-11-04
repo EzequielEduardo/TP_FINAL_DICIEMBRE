@@ -103,6 +103,8 @@ bool VentaVista::cargarVentas()
     cin>>decimal;
     venta.setTRprecioUnitario(decimal);
 
+	venta.setStatus(true);
+
     negocio.actualizarstock(0,venta);
 
     return negocio.guardarDatosVenta(venta);
@@ -117,6 +119,7 @@ bool VentaVista::mostrarVentas(){
     vectorVentas=negocio.Cargar_Vector_de_Ventas();///get ventas
 		cout<< "LISTADO DE VENTAS REALIZADAS"<<endl;
         for(int x;x<negocio.CantidadDeVentas();x++){
+		if(vectorVentas[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
         cout<< "Nro de Factura: "<<vectorVentas[x].getNroFactura() <<endl;
         cout<< "Categoria: "<<vectorVentas[x].getCategoria() <<endl;
@@ -126,6 +129,7 @@ bool VentaVista::mostrarVentas(){
         cout<< "Precio Unitario: "<<vectorVentas[x].getTRprecioUnitario() <<endl;
         cout<< "Cantidad Valorizada: "<<vectorVentas[x].getTRValorizada() <<endl;
         cout<< "-------------------------"<<endl;}
+        }
 
     delete vectorVentas;
 
@@ -158,7 +162,7 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que con
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
 			if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
-				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0){
+				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 && vectorStock[x].getStatus()==true){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
 				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
 				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
@@ -183,7 +187,7 @@ char Invoice[30]{};
 TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que contiene todo el file inventario
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
-			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0){
+			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0 && vectorStock[x].getStatus()==true){
 				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
 				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
 				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
@@ -195,3 +199,20 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que con
 }
 
 }
+
+
+void VentaVista::messageAnulacionOK(){
+			cout<<"Factura Anulada"<<endl;
+
+}
+
+void VentaVista::messageAnulacionNotOK(){
+			cout << "No existe la Factura ingresada "<<endl;
+
+}
+
+void VentaVista::messageReversoAnulacionOK(){
+			cout<<"Se restauro la Factura anulada "<<endl;
+
+}
+

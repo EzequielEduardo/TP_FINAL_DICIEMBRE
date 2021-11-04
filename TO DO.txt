@@ -2,8 +2,8 @@
 - actualizar diagrama. 
 
 - agregar las consultas que faltan:
-ANULAR COMPRA
-ANULAR VENTA 
+
+
 modificar compra 
 modificar venta
 
@@ -19,7 +19,7 @@ Validaciones:
 
 otros cambios:
 - En revaluo de inventario, la funcion posicion va en articuloFile y
-- meter funcion de reversar anulacion
+- Agregar filtro de status o otros reportes 
 
 HECHO:
 - Abrir menu en gestion de compras
@@ -37,6 +37,10 @@ HECHO:
 - Consulta de compras valorizadas a una fecha determinada, 
 - Listar VTAS x factura (una factura puede tener mas de un producto asociado).
 - Listar COMPRAS x factura (una factura puede tener mas de un producto asociado).
+-ANULAR COMPRA
+- REVERSAR ANULACION DE COMPRA
+- ANULAR VENTA 
+- REVERSAR ANULACION DE VENTA
 
 Observaciones:
 Leer file completo files

@@ -9,6 +9,7 @@
 #include "VentaNegocio.h"
 #include "VentaFile.h"
 #include"Transaxinventario.h"
+#include"VentaVista.h"
 using namespace std;
 
 bool VentaNegocio::guardarDatos(TransaxInventario articulo)
@@ -16,8 +17,6 @@ bool VentaNegocio::guardarDatos(TransaxInventario articulo)
     VentaFile archivo;
     return archivo.grabarEnDisco(articulo);
 }
-
-
 
 void VentaNegocio::cargarCadena(char *pal, int tam){
 			int i;
@@ -29,3 +28,61 @@ void VentaNegocio::cargarCadena(char *pal, int tam){
 				pal[i]='\0';
 				fflush(stdin);
 				}
+
+int VentaNegocio::buscarPosicion(const char *id){
+    TransaxInventario reg;
+    VentaFile obj;
+    int pos = 0;
+    while(obj.leerVenta(reg, pos)){ // Mandar a vista file
+        if (strcmp(id, reg.getNroFactura()) == 0){
+            return pos;
+        }
+        pos++;
+    }
+    return -1;
+}
+
+void VentaNegocio::AnularVenta(const char * id){
+	VentaFile reg;
+	TransaxInventario obj;
+	VentaVista obj2;
+	int pos = buscarPosicion(id);
+	float pu=0;
+	if (pos >= 0){ 		//porque lo encuentra
+
+			reg.leerVenta(obj,pos);
+			obj.setStatus(false); //camio el estado para que no lo muestre. Baja logica
+			obj2.messageAnulacionOK();
+			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+		}
+	 else{
+				obj2.messageAnulacionNotOK();
+
+    }
+    cout << endl << endl;
+
+
+}
+
+
+void VentaNegocio::ReversarAnulacionVenta(const char * id){
+	VentaFile reg;
+	TransaxInventario obj;
+	VentaVista obj2;
+	int pos = buscarPosicion(id);
+	float pu=0;
+	if (pos >= 0){ 		//porque lo encuentra
+
+			reg.leerVenta(obj,pos);
+			obj.setStatus(true); //camio el estado para que no lo muestre. Baja logica
+			obj2.messageReversoAnulacionOK();
+			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+		}
+	 else{
+				obj2.messageAnulacionNotOK();
+
+    }
+    cout << endl << endl;
+
+}
+

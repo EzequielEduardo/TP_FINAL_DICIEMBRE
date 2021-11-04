@@ -13,6 +13,7 @@
 #include "VentaVista.h"
 #include"TransaxinventarioVista.h"
 #include"CompraNegocio.h"
+#include"VentaNegocio.h"
 
 
 using namespace std;
@@ -213,8 +214,9 @@ void MenuPrincipal::submenuCompras(){
         cout<<"2-LISTAR COMPRAS REALIZADAS"<<endl;
 		cout<<"3-MODIFICAR FACTURAS DE COMPRAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE COMPRAS"<<endl;
-		cout<<"5-LISTAR COMPRAS X PRODUCTO Y FECHA"<<endl;
-		cout<<"6-LISTAR COMPRAS X FACTURA"<<endl;
+		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
+		cout<<"6-LISTAR COMPRAS X PRODUCTO Y FECHA"<<endl;
+		cout<<"7-LISTAR COMPRAS X FACTURA"<<endl;
         cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -244,27 +246,39 @@ void MenuPrincipal::submenuCompras(){
 		break;
 
 		case 4:
-			CompraNegocio obj3;
+			CompraNegocio obj4;
 			char Invoice[15];
 
-		cout<<"INGRESE LA FACTURA DE LA COMPRA A ELIMINAR:"; // La factura es el ID que no se repita
+		cout<<"INGRESE LA FACTURA DE LA COMPRA A ANULAR:"; // La factura es el ID que no se repita
 		cin>>Invoice;
 
-
-
-			obj3.AnularCompra(Invoice);
+			obj4.AnularCompra(Invoice);
 
 			system("pause");
 			system("cls");
             break;
 
-		case 5:
+ 		case 5:
+			CompraNegocio obj3;
+			char Invoice2[15];
+
+		cout<<"INGRESE LA FACTURA DE LA COMPRA QUE DESEA REVERAR LA ANULACION:"; // La factura es el ID que no se repita
+		cin>>Invoice2;
+
+			obj3.ReversarAnulacionCompra(Invoice2);
+
+			system("pause");
+			system("cls");
+            break;
+
+
+		case 6:
 		obj1.MostrarComprasxFecha();
 			system("pause");
 			system("cls");
             break;
 
-		case 6:
+		case 7:
 		obj1.ListarComprasxFactura();
 			system("pause");
 			system("cls");
@@ -297,8 +311,9 @@ void MenuPrincipal::submenuVentas(){
         cout<<"2-LISTAR VENTAS REALIZADAS"<<endl;
 		cout<<"3-MODIFICAR FACTURAS DE VENTAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE VENTAS"<<endl;
-		cout<<"5-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
-		cout<<"6-LISTAR VENTAS X FACTURA"<<endl;
+		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
+		cout<<"6-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
+		cout<<"7-LISTAR VENTAS X FACTURA"<<endl;
         cout<<"0-SALIR DEL PROGRAMA"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -327,26 +342,46 @@ void MenuPrincipal::submenuVentas(){
 			system("cls");
 		break;
 
-		case 4:
+		case 4:{
+			VentaNegocio obj4;
+			char Invoice[15];
+
+		cout<<"INGRESE LA FACTURA DE LA COMPRA A ANULAR:"; // La factura es el ID que no se repita
+		cin>>Invoice;
+
+			obj4.AnularVenta(Invoice);
 
 			system("pause");
 			system("cls");
+			}
+
             break;
 
-		case 5:
+ 		case 5:{
+			VentaNegocio obj3;
+			char Invoice2[15];
+
+		cout<<"INGRESE LA FACTURA DE LA COMPRA QUE DESEA REVESAR LA ANULACION:"; // La factura es el ID que no se repita
+		cin>>Invoice2;
+
+			obj3.ReversarAnulacionVenta(Invoice2);
+			system("pause");
+			system("cls");
+ 		}
+            break;
+
+
+		case 6:
 			obj2.MostrarVtasxFecha();
 			system("pause");
 			system("cls");
             break;
 
-		case 6:
+		case 7:
 			obj2.ListarVtasxFactura();
 			system("pause");
 			system("cls");
             break;
-
-
-
 
 
         case 0:

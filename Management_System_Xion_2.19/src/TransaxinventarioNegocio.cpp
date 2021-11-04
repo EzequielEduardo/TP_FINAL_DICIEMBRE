@@ -7,10 +7,9 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
 {
     TransaxinventarioFile archivo;
 	ArticuloFile reg;
+	int stock=archivo.getStock(); // deberia darme el stock actual + la posicion en el file
 
-	int stock=archivo.getStock();
-
-    if(tipoTrans==0) // 0 es venta
+    if(tipoTrans==0 ) // 0 es venta
     {
         compra_vta.setTipoTransax(0);
         stock-=compra_vta.getTRCantidad();
@@ -27,6 +26,8 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
         float stockValorizado=stock*precioOK;
         compra_vta.setStockValorizado(stockValorizado);
         archivo.grabarDatosInventario(compra_vta);
+
+
 }
 
 int TransaxinventarioNegocio::CantidadDeTransax()
