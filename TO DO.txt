@@ -2,10 +2,8 @@
 - actualizar diagrama. 
 
 - agregar las consultas que faltan:
-
-
 modificar Q de compra en factura de compras
-modificar venta
+modificar  Q de venta
 
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
 
@@ -15,12 +13,11 @@ Validaciones:
 - Al cargar la compra el proveedoringresado existe en el maestro
 - Al cargar marca validar con las existentes en el master.
 - Al cargar categoria Validar con existentes en el master.
-- permiter mostrar fecha 01, que sea lo mismo que poner 1.
+- Permiter mostrar fecha 01, que sea lo mismo que poner 1.
 
 Otros TODO:
 - Al anular venta o compra no actualiza file inventario
 - testear si sigue sumando los registros anulados
-- Actualizar stock no diferencia entre distintos productos
 - mostrar la misma orden de info en  report compras y ventas. ajustar factura
 
 HECHO:
@@ -43,10 +40,12 @@ HECHO:
 - REVERSAR ANULACION DE COMPRA
 - ANULAR VENTA 
 - REVERSAR ANULACION DE VENTA
+- Actualizar stock no diferencia entre distintos productos
+- Agregar filtro de status en otros reportes
 
 Observaciones:
-Leer file completo files
-Mejorar estetica del menu
-Formato de tabla en listar
-- Duplica los files, compras y ventas podria usarse solo transaccion de inv.
-- Agregar filtro de status en otros reportes 
+- Leer files completo con fseek
+- Mejorar estetica del menu
+- Formato de tabla en listar
+- Duplica los files compras y ventas podria usarse solo transaccion de inv.
+

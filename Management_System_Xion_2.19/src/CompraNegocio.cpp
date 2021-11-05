@@ -64,6 +64,7 @@ int CompraNegocio::buscarPosicion(const char *id){
 void CompraNegocio::AnularCompra(const char * id){
 	CompraFile reg;
 	TransaxInventario obj;
+	TransaxinventarioNegocio stock;
 	CompraVista obj2;
 	int pos = buscarPosicion(id);
 	if (pos >= 0){ 		//porque lo encuentra
@@ -72,6 +73,8 @@ void CompraNegocio::AnularCompra(const char * id){
 			obj.setStatus(false); //camio el estado para que no lo muestre. Baja logica
 			obj2.messageAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(1,obj);
+
 		}
 	 else{
 				obj2.messageAnulacionNotOK();

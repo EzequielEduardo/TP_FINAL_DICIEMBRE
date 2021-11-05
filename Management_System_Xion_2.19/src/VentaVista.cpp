@@ -119,7 +119,7 @@ bool VentaVista::mostrarVentas(){
     vectorVentas=negocio.Cargar_Vector_de_Ventas();///get ventas
 		cout<< "LISTADO DE VENTAS REALIZADAS"<<endl;
         for(int x;x<negocio.CantidadDeVentas();x++){
-		if(vectorVentas[x].getStatus()==true){
+		//if(vectorVentas[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
         cout<< "Nro de Factura: "<<vectorVentas[x].getNroFactura() <<endl;
         cout<< "Categoria: "<<vectorVentas[x].getCategoria() <<endl;
@@ -128,7 +128,8 @@ bool VentaVista::mostrarVentas(){
         cout<< "Cantidad: "<<vectorVentas[x].getTRCantidad() <<endl;
         cout<< "Precio Unitario: "<<vectorVentas[x].getTRprecioUnitario() <<endl;
         cout<< "Cantidad Valorizada: "<<vectorVentas[x].getTRValorizada() <<endl;
-        cout<< "-------------------------"<<endl;}
+        cout<< "-------------------------"<<endl;
+        cout<<"status"<<vectorVentas[x].getStatus()<<endl;
         }
 
     delete vectorVentas;

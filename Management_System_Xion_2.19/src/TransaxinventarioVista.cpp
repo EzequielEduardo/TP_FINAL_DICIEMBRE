@@ -16,7 +16,7 @@ void TransaxinventarioVista::MostrarInventario(){
 		cout<<"LISTAR TODAS LAS TRANSACCIONES DEL STOCK COMPLETO"<<endl;
 		cout<<endl;
         for(int x;x<negocio.CantidadDeTransax();x++){
-			if(vectorStock[x].getStatus()==true){
+		//	if(vectorStock[x].getStatus()==true){
         cout<< "ID_Articulo: "<<vectorStock[x].getTRID_Articulo() <<endl;
 		cout<< "Nro de Factura: "<<vectorStock[x].getNroFactura() <<endl;
 		cout<< "Fecha de Stock: ";vectorStock[x].getFechaTransax().MostrarFecha();
@@ -27,8 +27,9 @@ void TransaxinventarioVista::MostrarInventario(){
         cout<< "Precio Unitario: "<<vectorStock[x].getTRprecioUnitario() <<endl;
         cout<< "STOCK: "<<vectorStock[x].getStock() <<endl;
         cout<< "StockValorizado: "<<vectorStock[x].getStockValorizado() <<endl;
-        cout<< "-------------------------"<<endl;}
+        cout<< "-------------------------"<<endl;
         }
+
 
     delete vectorStock;
 }

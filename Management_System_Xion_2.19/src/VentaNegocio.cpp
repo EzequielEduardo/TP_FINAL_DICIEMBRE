@@ -10,6 +10,8 @@
 #include "VentaFile.h"
 #include"Transaxinventario.h"
 #include"VentaVista.h"
+#include "TransaxinventarioNegocio.h"
+
 using namespace std;
 
 bool VentaNegocio::guardarDatos(TransaxInventario articulo)
@@ -45,14 +47,17 @@ int VentaNegocio::buscarPosicion(const char *id){
 void VentaNegocio::AnularVenta(const char * id){
 	VentaFile reg;
 	TransaxInventario obj;
+	TransaxinventarioNegocio stock;
 	VentaVista obj2;
 	int pos = buscarPosicion(id);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
 			obj.setStatus(false); //camio el estado para que no lo muestre. Baja logica
+			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(0,obj);
 		}
 	 else{
 				obj2.messageAnulacionNotOK();
@@ -67,14 +72,17 @@ void VentaNegocio::AnularVenta(const char * id){
 void VentaNegocio::ReversarAnulacionVenta(const char * id){
 	VentaFile reg;
 	TransaxInventario obj;
+	TransaxinventarioNegocio stock;
 	VentaVista obj2;
 	int pos = buscarPosicion(id);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
 			obj.setStatus(true); //camio el estado para que no lo muestre. Baja logica
+			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageReversoAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(0,obj);
 		}
 	 else{
 				obj2.messageAnulacionNotOK();

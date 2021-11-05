@@ -311,7 +311,7 @@ void MenuPrincipal::submenuVentas(){
         cout<<"2-LISTAR VENTAS REALIZADAS"<<endl;
 		cout<<"3-MODIFICAR FACTURAS DE VENTAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE VENTAS"<<endl;
-		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
+		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE VENTAS"<<endl;
 		cout<<"6-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
 		cout<<"7-LISTAR VENTAS X FACTURA"<<endl;
         cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;

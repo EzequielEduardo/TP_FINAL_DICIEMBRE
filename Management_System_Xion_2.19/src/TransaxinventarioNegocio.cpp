@@ -6,14 +6,17 @@
 int TransaxinventarioNegocio::buscarPosicion(const char *id){
     TransaxInventario reg;
     TransaxinventarioFile obj;
-    int pos = 0;
+    int pos = 0;//obj.cantidadDeTransaxGrabadas();
+    int maxpos = 0;
     while(obj.leerCompra_vta(reg, pos)){ // Mandar a vista file
-        if (strcmp(id, reg.getTRID_Articulo()) == 0){
-            return pos;
+        if (strcmp(id, reg.getTRID_Articulo()) == 0 && pos>maxpos){
+			maxpos=pos;
         }
         pos++;
-    }
-    return -1;
+
+	}
+    if(maxpos!=0)return maxpos;
+    else return -1;
 }
 
 void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario &compra_vta)
@@ -30,10 +33,8 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
     {
         compra_vta.setTipoTransax(0);
         stock-=compra_vta.getTRCantidad();
-
     }
-    else
-    {
+    else {
         compra_vta.setTipoTransax(1); //1 es compra
         stock+=compra_vta.getTRCantidad();
     }
@@ -43,7 +44,6 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
         float stockValorizado=stock*precioOK;
         compra_vta.setStockValorizado(stockValorizado);
         archivo.grabarDatosInventario(compra_vta);
-
 	}
 
 	else{	// si el producto no esta en stock. Primer ingreso al stock
