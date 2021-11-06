@@ -8,8 +8,11 @@
 //Muestra la fecha en formato número. Ej.:  15/10/2008
 void Fecha::MostrarFecha()
 {
-  cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
-}//¿Qué modificación habría que hacer para que siempre muestre DD/MM/AAAA?
+if(dia<10 || mes<10) cout<<"0"<<dia<<"/"<<"0"<<mes<<"/"<<anio<<endl;
+else cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+
+}
+
 
 
 //Muestra la fecha indicando en texto el día y el mes.Ej.: Lunes 1 de enero de 1900

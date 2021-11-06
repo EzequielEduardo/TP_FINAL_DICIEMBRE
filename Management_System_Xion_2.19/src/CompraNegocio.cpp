@@ -71,6 +71,7 @@ void CompraNegocio::AnularCompra(const char * id){
 
 			reg.leerCompra(obj,pos);
 			obj.setStatus(false); //camio el estado para que no lo muestre. Baja logica
+			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
 			stock.actualizarstock(1,obj);
@@ -96,6 +97,7 @@ void CompraNegocio::ReversarAnulacionCompra(const char * id){
 
 			reg.leerCompra(obj,pos);
 			obj.setStatus(true); //camio el estado para que no lo muestre. Baja logica
+			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageReversoAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
 		}

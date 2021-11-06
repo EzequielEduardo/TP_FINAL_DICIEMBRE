@@ -74,12 +74,12 @@ bool VentaVista::cargarVentas()
 
     TransaxInventario venta(dia,mes,anio);
 
-    cout<<"--------------------------------------"<<endl;
+    cout<<"------------------------------"<<endl;
 
     cout << "Datos de la Venta:"<<endl;
     cout<<"Ingresar: "<<endl;
 
-    cout<<"ID_Articulo: ";
+    cout<<"ID del Articulo: ";
     negocio.cargarCadena(cadena,20);
     venta.setTRID_Articulo(cadena);
 
@@ -118,18 +118,34 @@ bool VentaVista::mostrarVentas(){
 
     vectorVentas=negocio.Cargar_Vector_de_Ventas();///get ventas
 		cout<< "LISTADO DE VENTAS REALIZADAS"<<endl;
+		cout<<endl;
         for(int x;x<negocio.CantidadDeVentas();x++){
-		//if(vectorVentas[x].getStatus()==true){
-        cout<< "ID_Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
-        cout<< "Nro de Factura: "<<vectorVentas[x].getNroFactura() <<endl;
+		if(vectorVentas[x].getStatus()==true){
+        cout<< "ID del Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
+        cout<< "Nro de Factura de Venta: "<<vectorVentas[x].getNroFactura() <<endl;
         cout<< "Categoria: "<<vectorVentas[x].getCategoria() <<endl;
 		cout<< "Marca: "<<vectorVentas[x].getMarca() <<endl;
 		cout<< "Fecha de venta: ";vectorVentas[x].getFechaTransax().MostrarFecha();
         cout<< "Cantidad: "<<vectorVentas[x].getTRCantidad() <<endl;
         cout<< "Precio Unitario: "<<vectorVentas[x].getTRprecioUnitario() <<endl;
         cout<< "Cantidad Valorizada: "<<vectorVentas[x].getTRValorizada() <<endl;
-        cout<< "-------------------------"<<endl;
-        cout<<"status"<<vectorVentas[x].getStatus()<<endl;
+        cout<<"------------------------------"<<endl;
+		}
+		else{
+		cout<< "-FACTURA ANULADA-"<<endl;
+		cout<< "ID del Articulo: "<<vectorVentas[x].getTRID_Articulo() <<endl;
+        cout<< "Nro de Factura de Venta: "<<vectorVentas[x].getNroFactura() <<endl;
+        cout<< "Categoria: "<<vectorVentas[x].getCategoria() <<endl;
+		cout<< "Marca: "<<vectorVentas[x].getMarca() <<endl;
+		cout<< "Fecha de venta: ";vectorVentas[x].getFechaTransax().MostrarFecha();
+        cout<< "Cantidad: "<<vectorVentas[x].getTRCantidad() <<endl;
+        cout<< "Precio Unitario: "<<vectorVentas[x].getTRprecioUnitario() <<endl;
+        cout<< "Cantidad Valorizada: "<<vectorVentas[x].getTRValorizada() <<endl;
+        cout<<"------------------------------"<<endl;
+
+
+		}
+        //cout<<"status"<<vectorVentas[x].getStatus()<<endl;
         }
 
     delete vectorVentas;
@@ -143,7 +159,7 @@ int dia, mes, anio;
 char CODEART[20];
 			cout<<"LISTADO DE VENTAS X PRODUCTO Y FECHA"<<endl;
 			cout<<endl;
-			cout<<"INGRESE LA FECHA DE STOCK: "<<endl;
+			cout<<"Ingrese la Fecha de Stock: "<<endl;
 				cout<<"Dia: ";
 				cin>>dia;
 				cout<<"Mes: ";
@@ -153,7 +169,7 @@ char CODEART[20];
 
 			TransaxInventario obj(dia,mes,anio);
 
-			cout<<"INGRESE CODIGO DE ARTICULO: "<<endl;
+			cout<<"Ingrese el ID del Articulo: "<<endl;
 			cin>>CODEART;
 			cout<<endl;
 			obj.setTRID_Articulo(CODEART);
@@ -164,14 +180,30 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que con
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
 			if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
 				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 && vectorStock[x].getStatus()==true){
-				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
-				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
-				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
-				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
-				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
-				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
-				cout<<"CANTIDAD VALORIZADA: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"ID del Articulo: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"Nro de Factura de Venta: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"Categoria: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"Marca: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"Cantidad Vendida: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"Precio del Articulo Vendido: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"Cantidad Valorizada: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"------------------------------"<<endl;
 			}
+
+		if(obj.getFechaTransax()==vectorStock[x].getFechaTransax() &&
+				strcmp(obj.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 && vectorStock[x].getStatus()==false){
+
+				cout<<"-FACTURA ANULADA- "<<endl;
+				cout<<"ID del Articulo: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"Nro de Factura de Venta: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"Categoria: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"Marca: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"Cantidad Vendida: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"Precio del Articulo Vendido: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"Cantidad Valorizada: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"------------------------------"<<endl;
+			}
+
 }
 
 }
@@ -179,23 +211,34 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que con
 void VentaVista::ListarVtasxFactura(){
 TransaxinventarioNegocio obj1;
 char Invoice[30]{};
-			cout<<"INGRESE LA FACTURA A BUSCAR: "<<endl;
+			cout<<"Ingrese el Nro de la Factura a Buscar: "<<endl;
 			cin>>Invoice;
 			cout<<endl;
-
-
 
 TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que contiene todo el file inventario
 
 	  for(int x=0;x<obj1.CantidadDeTransax();x++){
 			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0 && vectorStock[x].getStatus()==true){
-				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
-				cout<<"NRO DE FACTURA: "<<vectorStock[x].getNroFactura()<<endl;
-				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
-				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
-				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
-				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
-				cout<<"CANTIDAD VALORIZADA: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"ID del Articulo: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"Nro de Factura de Venta: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"Categoria: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"Marca: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"Cantidad Vendida: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"Precio del Articulo Vendido: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"Cantidad Valorizada: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"------------------------------"<<endl;
+			}
+
+			if(strcmp(Invoice,vectorStock[x].getNroFactura())==0 && vectorStock[x].getStatus()==false){
+				cout<<"-FACTURA ANULADA-"<<endl;
+				cout<<"ID del Articulo: "<<vectorStock[x].getTRID_Articulo()<<endl;
+				cout<<"Nro de Factura de Venta: "<<vectorStock[x].getNroFactura()<<endl;
+				cout<<"Categoria: "<<vectorStock[x].getCategoria()<<endl;
+				cout<<"Marca: "<<vectorStock[x].getMarca()<<endl;
+				cout<<"Cantidad Vendida: "<<vectorStock[x].getTRCantidad()<<endl;
+				cout<<"Precio del Articulo Vendido: "<<vectorStock[x].getTRprecioUnitario()<<endl;
+				cout<<"Cantidad Valorizada: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"------------------------------"<<endl;
 			}
 }
 

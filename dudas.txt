@@ -1,3 +1,0 @@
-- usamos an algun lado la sobrecarga de operadores?
-- repasar logica de validacion de cadena
-- metemos las validaciones que puse?

@@ -145,7 +145,7 @@ void MenuPrincipal::submenuInventarios(){
 		cout<<"1-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK COMPLETO"<<endl;
 		cout<<"2-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA"<<endl;
 		cout<<"3-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"<<endl;
-		cout<<"4-LISTAR STOCK X PRODUCTO Y FECHA"<<endl;
+		cout<<"4-LISTAR STOCK POR PRODUCTO Y FECHA"<<endl;
         cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -215,8 +215,8 @@ void MenuPrincipal::submenuCompras(){
 		cout<<"3-MODIFICAR FACTURAS DE COMPRAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE COMPRAS"<<endl;
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
-		cout<<"6-LISTAR COMPRAS X PRODUCTO Y FECHA"<<endl;
-		cout<<"7-LISTAR COMPRAS X FACTURA"<<endl;
+		cout<<"6-LISTAR COMPRAS POR PRODUCTO Y FECHA"<<endl;
+		cout<<"7-LISTAR COMPRAS POR FACTURA"<<endl;
         cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;
@@ -312,8 +312,8 @@ void MenuPrincipal::submenuVentas(){
 		cout<<"3-MODIFICAR FACTURAS DE VENTAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE VENTAS"<<endl;
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE VENTAS"<<endl;
-		cout<<"6-LISTAR VENTAS X PRODUCTO Y FECHA"<<endl;
-		cout<<"7-LISTAR VENTAS X FACTURA"<<endl;
+		cout<<"6-LISTAR VENTAS POR PRODUCTO Y FECHA"<<endl;
+		cout<<"7-LISTAR VENTAS POR FACTURA"<<endl;
         cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
         cout<<"Ingresar Opcion: ";
         cin>>opc;

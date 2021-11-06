@@ -65,9 +65,7 @@ void VentaNegocio::AnularVenta(const char * id){
     }
     cout << endl << endl;
 
-
 }
-
 
 void VentaNegocio::ReversarAnulacionVenta(const char * id){
 	VentaFile reg;
@@ -78,7 +76,7 @@ void VentaNegocio::ReversarAnulacionVenta(const char * id){
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
-			obj.setStatus(true); //camio el estado para que no lo muestre. Baja logica
+			obj.setStatus(true); //cambio el estado para que no lo muestre. Baja logica
 			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageReversoAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion

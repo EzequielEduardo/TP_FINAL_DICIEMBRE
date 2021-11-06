@@ -1,9 +1,9 @@
 - meter setprecision al mostrar valores float ( compra ,venta, stock valorizado)
 - actualizar diagrama. 
 
-- agregar las consultas que faltan:
-modificar Q de compra en factura de compras
-modificar  Q de venta
+Agregar las consultas que faltan:
+- modificar Q de compra en factura de compras
+- modificar  Q de venta
 
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
 
@@ -16,8 +16,10 @@ Validaciones:
 - Permiter mostrar fecha 01, que sea lo mismo que poner 1.
 
 Otros TODO:
-- Al anular venta o compra no actualiza file inventario
-- testear si sigue sumando los registros anulados
+- test unitario de todo y ver si corresponde mostrar facturas anuladas al listar ventas o compras.  si es anulada mostrar mensaje de factura anulada
+- carga datos reales
+- hacer video explicativo
+- actualizar Informe + diagrama
 - mostrar la misma orden de info en  report compras y ventas. ajustar factura
 
 HECHO:
@@ -48,4 +50,5 @@ Observaciones:
 - Mejorar estetica del menu
 - Formato de tabla en listar
 - Duplica los files compras y ventas podria usarse solo transaccion de inv.
-
+- Al anular venta o compra no actualiza file inventario
+- testear si sigue sumando los registros anulados
