@@ -212,7 +212,7 @@ void MenuPrincipal::submenuCompras(){
 		cout<<"SUBMENU GESTION DE COMPRAS"<<endl<<endl;
         cout<<"1-CARGAR FACTURAS DE COMPRAS"<<endl;
         cout<<"2-LISTAR COMPRAS REALIZADAS"<<endl;
-		cout<<"3-MODIFICAR FACTURAS DE COMPRAS"<<endl;
+		cout<<"3-MODIFICAR CANTIDAD EN FACTURAS DE COMPRAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE COMPRAS"<<endl;
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE COMPRAS"<<endl;
 		cout<<"6-LISTAR COMPRAS POR PRODUCTO Y FECHA"<<endl;
@@ -239,10 +239,16 @@ void MenuPrincipal::submenuCompras(){
             system("cls");
 		break;
 
-		case 3:
+		case 3:{
+		CompraNegocio obj;
+			char Invoice[30]{};
+			cout<<"Ingrese el Nro de la Factura a Modificar: "<<endl;
+			cin>>Invoice;
+			cout<<endl;
 
+			obj.ModifQenFacturaDeCompras(Invoice);
 			system("pause");
-			system("cls");
+			system("cls");}
 		break;
 
 		case 4:
@@ -309,7 +315,7 @@ void MenuPrincipal::submenuVentas(){
 		cout<<"SUBMENU GESTION DE VENTAS"<<endl<<endl;
         cout<<"1-CARGAR FACTURAS DE VENTAS"<<endl;
         cout<<"2-LISTAR VENTAS REALIZADAS"<<endl;
-		cout<<"3-MODIFICAR FACTURAS DE VENTAS"<<endl;
+		cout<<"3-MODIFICAR CANTIDAD DE FACTURAS DE VENTAS"<<endl;
 		cout<<"4-ANULAR FACTURAS DE VENTAS"<<endl;
 		cout<<"5-REVERSAR DE ANULACION DE FACTURAS DE VENTAS"<<endl;
 		cout<<"6-LISTAR VENTAS POR PRODUCTO Y FECHA"<<endl;
@@ -336,17 +342,23 @@ void MenuPrincipal::submenuVentas(){
             system("cls");
 		break;
 
-		case 3:
+		case 3:{
+			VentaNegocio obj;
+			char Invoice[30]{};
+			cout<<"Ingrese el Nro de la Factura a Modificar: "<<endl;
+			cin>>Invoice;
+			cout<<endl;
 
+			obj.ModifQenFacturaDeVtas(Invoice);
 			system("pause");
-			system("cls");
+			system("cls");}
 		break;
 
 		case 4:{
 			VentaNegocio obj4;
 			char Invoice[15];
 
-		cout<<"INGRESE LA FACTURA DE LA COMPRA A ANULAR:"; // La factura es el ID que no se repita
+		cout<<"INGRESE LA FACTURA DE LA COMPRA A ANULAR:"; // La factura es el ID que no se repite
 		cin>>Invoice;
 
 			obj4.AnularVenta(Invoice);
@@ -361,7 +373,7 @@ void MenuPrincipal::submenuVentas(){
 			VentaNegocio obj3;
 			char Invoice2[15];
 
-		cout<<"INGRESE LA FACTURA DE LA COMPRA QUE DESEA REVESAR LA ANULACION:"; // La factura es el ID que no se repita
+		cout<<"INGRESE LA FACTURA DE LA COMPRA QUE DESEA REVERSAR LA ANULACION:"; // La factura es el ID que no se repita
 		cin>>Invoice2;
 
 			obj3.ReversarAnulacionVenta(Invoice2);

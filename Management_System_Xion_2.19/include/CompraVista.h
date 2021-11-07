@@ -17,6 +17,9 @@ class CompraVista
 	void messageAnulacionOK();
 	void messageAnulacionNotOK();
 	void messageReversoAnulacionOK();
+	int PideNewQFacturaCompras();
+	void messageFacturaModifOK();
+	void messageValidacionCompra(bool flagValidacion);
 };
 
 #endif // COMPRAVISTA_H

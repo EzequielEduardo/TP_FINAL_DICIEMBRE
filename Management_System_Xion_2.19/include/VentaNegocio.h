@@ -10,9 +10,10 @@ class VentaNegocio
 
 	bool guardarDatos(TransaxInventario);
 	void cargarCadena(char *pal, int tam);
-	int buscarPosicion(const char *id);
+	int buscarPosicionInvoice(const char *id);
 	void AnularVenta(const char * id);
 	void ReversarAnulacionVenta(const char * id);
+	void ModifQenFacturaDeVtas(const char * invoice);
 };
 
 #endif // VENTANEGOCIO_H

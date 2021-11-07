@@ -6,7 +6,7 @@
 #include "TransaxinventarioVista.h"
 #include "TransaxinventarioNegocio.h"
 #include "Transaxinventario.h"
-
+#include<iomanip>
 void TransaxinventarioVista::MostrarInventario(){
 
 	TransaxinventarioNegocio negocio;
@@ -26,7 +26,7 @@ void TransaxinventarioVista::MostrarInventario(){
         cout<< "Cantidad: "<<vectorStock[x].getTRCantidad() <<endl;
         cout<< "Precio Unitario: "<<vectorStock[x].getTRprecioUnitario() <<endl;
         cout<< "Stock: "<<vectorStock[x].getStock() <<endl;
-        cout<< "Stock Valorizado: "<<vectorStock[x].getStockValorizado() <<endl;
+        cout<< "Stock Valorizado: "<<vectorStock[x].getStockValorizado()<<endl;
         cout<< "-------------------------------------------------"<<endl;
         }
         else{

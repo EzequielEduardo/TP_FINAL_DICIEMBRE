@@ -10,6 +10,7 @@
 #include "CompraNegocio.h"
 #include "CompraFile.h"
 #include"CompraVista.h"
+#include"ArticuloNegocio.h"
 using namespace std;
 
 bool CompraNegocio::guardarDatos(TransaxInventario articulo)
@@ -48,12 +49,12 @@ void CompraNegocio::cargarCadena(char *pal, int tam){
 				fflush(stdin);
 				}
 
-int CompraNegocio::buscarPosicion(const char *id){
+int CompraNegocio::buscarPosicionInvoice(const char *invoice){
     TransaxInventario reg;
     CompraFile obj;
     int pos = 0;
     while(obj.leerCompra(reg, pos)){ // Mandar a vista file
-        if (strcmp(id, reg.getNroFactura()) == 0){
+        if (strcmp(invoice, reg.getNroFactura()) == 0){
             return pos;
         }
         pos++;
@@ -61,12 +62,12 @@ int CompraNegocio::buscarPosicion(const char *id){
     return -1;
 }
 
-void CompraNegocio::AnularCompra(const char * id){
+void CompraNegocio::AnularCompra(const char * invoice){
 	CompraFile reg;
 	TransaxInventario obj;
 	TransaxinventarioNegocio stock;
 	CompraVista obj2;
-	int pos = buscarPosicion(id);
+	int pos = buscarPosicionInvoice(invoice);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerCompra(obj,pos);
@@ -88,11 +89,11 @@ void CompraNegocio::AnularCompra(const char * id){
 
 
 
-void CompraNegocio::ReversarAnulacionCompra(const char * id){
+void CompraNegocio::ReversarAnulacionCompra(const char * invoice){
 	CompraFile reg;
 	TransaxInventario obj;
 	CompraVista obj2;
-	int pos = buscarPosicion(id);
+	int pos = buscarPosicionInvoice(invoice);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerCompra(obj,pos);
@@ -108,3 +109,37 @@ void CompraNegocio::ReversarAnulacionCompra(const char * id){
     cout << endl << endl;
 
 }
+
+
+void CompraNegocio::ModifQenFacturaDeCompras(const char * invoice){
+	CompraFile reg;
+	TransaxInventario obj;
+	TransaxinventarioNegocio stock;
+	CompraVista obj2;
+	int pos = buscarPosicionInvoice(invoice);
+	if (pos >= 0){ 		//porque lo encuentra
+
+			reg.leerCompra(obj,pos);
+			int NewQ = obj2.PideNewQFacturaCompras();
+			obj.setTRCantidad(NewQ);
+			obj2.messageFacturaModifOK();
+			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(1,obj);
+		}
+	 else{
+				obj2.messageAnulacionNotOK();
+
+    }
+    cout << endl << endl;
+}
+
+
+	bool CompraNegocio::ValidacionDeArticulo(const char * id){
+	ArticuloNegocio obj;
+	if(obj.buscarPosicion(id)>=0) return 1;
+	else return 0;
+
+
+	}
+
+

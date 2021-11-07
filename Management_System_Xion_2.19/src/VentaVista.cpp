@@ -4,7 +4,7 @@
 #include<cstring>
 #include <cstdio>
 #include<string.h>
-
+#include<iomanip>
 #include "ArticuloNegocio.h"
 #include "TransaxinventarioNegocio.h"
 #include "Transaxinventario.h"
@@ -237,7 +237,7 @@ TransaxInventario *vectorStock=obj1.Cargar_Vector_de_Ventas(); // vector que con
 				cout<<"Marca: "<<vectorStock[x].getMarca()<<endl;
 				cout<<"Cantidad Vendida: "<<vectorStock[x].getTRCantidad()<<endl;
 				cout<<"Precio del Articulo Vendido: "<<vectorStock[x].getTRprecioUnitario()<<endl;
-				cout<<"Cantidad Valorizada: "<<vectorStock[x].getTRValorizada()<<endl;
+				cout<<"Cantidad Valorizada: "<<setprecision(4)<<vectorStock[x].getTRValorizada()<<endl;
 				cout<<"------------------------------"<<endl;
 			}
 }
@@ -260,3 +260,14 @@ void VentaVista::messageReversoAnulacionOK(){
 
 }
 
+int VentaVista::PideNewQFacturaVtas(){
+	int Q;
+	cout<<"Ingrese la nueva cantidad "<<endl;
+	cin>>Q;
+	return Q;
+}
+
+void VentaVista::messageFacturaModifOK(){
+			cout<<"Se Modifico la Factura Correctamente "<<endl;
+
+}

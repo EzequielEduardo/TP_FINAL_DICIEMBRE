@@ -18,6 +18,9 @@ class VentaVista
 	void messageAnulacionOK();
 	void messageAnulacionNotOK();
 	void messageReversoAnulacionOK();
+	int PideNewQFacturaVtas();
+	void messageFacturaModifOK();
+
 };
 
 #endif // VENTAVISTA_H

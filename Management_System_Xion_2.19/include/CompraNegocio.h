@@ -13,9 +13,11 @@ class CompraNegocio
 
 	TransaxInventario* Cargar_Vector_de_Compras();
 	int CantidadDeCompras();
-	int buscarPosicion(const char *id);
+	int buscarPosicionInvoice(const char *id);
 	void AnularCompra(const char * id);
 	void ReversarAnulacionCompra(const char * id);
+	void ModifQenFacturaDeCompras(const char * invoice);
+	bool ValidacionDeArticulo(const char * id);
 };
 
 #endif // COMPRANEGOCIO_H

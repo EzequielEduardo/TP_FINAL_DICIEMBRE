@@ -31,12 +31,12 @@ void VentaNegocio::cargarCadena(char *pal, int tam){
 				fflush(stdin);
 				}
 
-int VentaNegocio::buscarPosicion(const char *id){
+int VentaNegocio::buscarPosicionInvoice(const char *invoice){
     TransaxInventario reg;
     VentaFile obj;
     int pos = 0;
     while(obj.leerVenta(reg, pos)){ // Mandar a vista file
-        if (strcmp(id, reg.getNroFactura()) == 0){
+        if (strcmp(invoice, reg.getNroFactura()) == 0){
             return pos;
         }
         pos++;
@@ -44,12 +44,12 @@ int VentaNegocio::buscarPosicion(const char *id){
     return -1;
 }
 
-void VentaNegocio::AnularVenta(const char * id){
+void VentaNegocio::AnularVenta(const char * invoice){
 	VentaFile reg;
 	TransaxInventario obj;
 	TransaxinventarioNegocio stock;
 	VentaVista obj2;
-	int pos = buscarPosicion(id);
+	int pos = buscarPosicionInvoice(invoice);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
@@ -67,12 +67,12 @@ void VentaNegocio::AnularVenta(const char * id){
 
 }
 
-void VentaNegocio::ReversarAnulacionVenta(const char * id){
+void VentaNegocio::ReversarAnulacionVenta(const char * invoice){
 	VentaFile reg;
 	TransaxInventario obj;
 	TransaxinventarioNegocio stock;
 	VentaVista obj2;
-	int pos = buscarPosicion(id);
+	int pos = buscarPosicionInvoice(invoice);
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerVenta(obj,pos);
@@ -90,3 +90,26 @@ void VentaNegocio::ReversarAnulacionVenta(const char * id){
 
 }
 
+
+void VentaNegocio::ModifQenFacturaDeVtas(const char * invoice){
+	VentaFile reg;
+	TransaxInventario obj;
+	TransaxinventarioNegocio stock;
+	VentaVista obj2;
+	int pos = buscarPosicionInvoice(invoice);
+	if (pos >= 0){ 		//porque lo encuentra
+
+			reg.leerVenta(obj,pos);
+			int NewQ = obj2.PideNewQFacturaVtas();
+			obj.setTRCantidad(NewQ);
+			obj2.messageFacturaModifOK();
+			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(0,obj);
+		}
+	 else{
+				obj2.messageAnulacionNotOK();
+
+    }
+    cout << endl << endl;
+
+}

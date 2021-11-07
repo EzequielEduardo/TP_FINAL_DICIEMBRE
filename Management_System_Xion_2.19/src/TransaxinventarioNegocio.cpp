@@ -3,7 +3,7 @@
 #include "Articulo.h"
 #include "ArticuloFile.h"
 //METODOS TRANSAX
-int TransaxinventarioNegocio::buscarPosicion(const char *id){
+int TransaxinventarioNegocio::buscarPosicionIDArticulo(const char *id){
     TransaxInventario reg;
     TransaxinventarioFile obj;
     int pos = 0;//obj.cantidadDeTransaxGrabadas();
@@ -24,7 +24,7 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
     TransaxinventarioFile archivo;
 	ArticuloFile reg;
 	int stock;
-	int pos = buscarPosicion(compra_vta.getTRID_Articulo());
+	int pos = buscarPosicionIDArticulo(compra_vta.getTRID_Articulo());
 	if (pos >= 0){ 		//porque lo encuentra
 
 	stock=archivo.getStock(pos); // deberia darme el stock actual + la posicion en el file

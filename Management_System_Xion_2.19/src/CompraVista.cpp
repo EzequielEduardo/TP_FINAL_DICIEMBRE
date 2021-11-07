@@ -20,7 +20,8 @@ bool CompraVista::cargarCompras()
 	char cadena[20];
     int entero,dia,mes,anio;
     float decimal;
-
+	CompraNegocio reg;
+	CompraVista obj;
     cout<<"Datos de la fecha actual: "<<endl;
     cout<<"Dia: ";
     cin>>dia;
@@ -40,9 +41,12 @@ bool CompraVista::cargarCompras()
         negocio.cargarCadena(cadena,20);
         compra.setNroFactura(cadena);
 
-    cout<<"ID_Articulo: ";
+    cout<<"ID del Articulo: ";
         negocio.cargarCadena(cadena,20);
-        compra.setTRID_Articulo(cadena);
+
+        if(reg.ValidacionDeArticulo(cadena)) {compra.setTRID_Articulo(cadena);}
+        else {obj.messageValidacionCompra(reg.ValidacionDeArticulo(cadena));
+				return 0;}
 
     cout<<"Categoria:";
         negocio.cargarCadena(cadena,20);
@@ -210,4 +214,21 @@ void CompraVista::messageAnulacionNotOK(){
 void CompraVista::messageReversoAnulacionOK(){
 			cout<<"Se restauro la Factura anulada "<<endl;
 
+}
+
+int CompraVista::PideNewQFacturaCompras(){
+	int Q;
+	cout<<"Ingrese la nueva cantidad "<<endl;
+	cin>>Q;
+	return Q;
+}
+
+void CompraVista::messageFacturaModifOK(){
+			cout<<"Se Modifico la Factura Correctamente "<<endl;
+
+}
+
+void CompraVista::messageValidacionCompra(bool flagValidacion){
+			if(!flagValidacion) cout<<"Ingrese un Articulo Valido (cargar previamente en Maestro de Articulos"<<endl;
+			system("pause");
 }
