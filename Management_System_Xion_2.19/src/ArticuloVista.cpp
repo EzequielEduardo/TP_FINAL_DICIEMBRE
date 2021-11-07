@@ -85,10 +85,9 @@ bool ArticuloVista::cargarArticulos()
     int numero,entero;
     float decimal;
 
-	cout << "Datos del Articulo:"<<endl;
-    cout<<"Ingresar: "<<endl;
+	cout << "Ingresar Datos del Articulo:"<<endl;
 
-    cout<<"ID_Articulo: ";
+    cout<<"ID del Articulo: ";
         negocio.cargarCadena(cadena,20);
         datos.setID_Articulo(cadena);
 
@@ -114,9 +113,9 @@ void ArticuloVista::mostrarArticulos()
     Articulo *vectorArticulos;
 
     vectorArticulos=negocio.Cargar_Vector_de_Articulos();///get_clientes
-
+	cout<<"MAESTRO DE ARTICULOS"<<endl;
         for(int x;x<negocio.CantidadDeArticulos();x++){
-        cout<< "ID_Articulo: "<<vectorArticulos[x].getID_Articulo() <<endl;
+        cout<< "ID del Articulo: "<<vectorArticulos[x].getID_Articulo() <<endl;
         cout<< "Precio Unitario de lista: "<<vectorArticulos[x].getprecioUnitario() <<endl;
         cout<< "Marca: "<<vectorArticulos[x].getMarca()<<endl;
         cout<< "Categoria: "<<vectorArticulos[x].getCategoria()<<endl;
@@ -138,6 +137,6 @@ void ArticuloVista::messageCargaOK(){
 }
 
 void ArticuloVista::messageCargaNotOK(){
-			cout << "No existe codigo de art"<<endl;
+			cout << "No existe codigo de articulo"<<endl;
 			system("pause");
 }

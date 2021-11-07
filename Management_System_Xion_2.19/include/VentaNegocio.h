@@ -14,6 +14,7 @@ class VentaNegocio
 	void AnularVenta(const char * id);
 	void ReversarAnulacionVenta(const char * id);
 	void ModifQenFacturaDeVtas(const char * invoice);
+	bool ValidacionDeArticulo(const char * id);
 };
 
 #endif // VENTANEGOCIO_H

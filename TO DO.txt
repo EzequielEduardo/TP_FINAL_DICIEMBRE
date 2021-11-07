@@ -1,26 +1,27 @@
-- meter setprecision al mostrar valores float ( compra ,venta, stock valorizado)
-- actualizar diagrama. 
-
 Agregar las consultas que faltan:
-- modificar Q de compra en factura de compras
-- modificar  Q de venta
 
--Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase
+
+-Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase.
 
 Validaciones:
-- Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 - Al cargar la venta el cliente ingresado existe en el maestro
 - Al cargar la compra el proveedoringresado existe en el maestro
 - Al cargar marca validar con las existentes en el master.
 - Al cargar categoria Validar con existentes en el master.
-- Permiter mostrar fecha 01, que sea lo mismo que poner 1.
+- Al buscar factura x Fecha compra y venta
 
-Otros TODO:
-- test unitario de todo y ver si corresponde mostrar facturas anuladas al listar ventas o compras.  si es anulada mostrar mensaje de factura anulada
+Otros TO DO:
+- test unitario de todo y ver si corresponde mostrar facturas anuladas al listar ventas o compras. 
 - carga datos reales
 - hacer video explicativo
 - actualizar Informe + diagrama
-- mostrar la misma orden de info en  report compras y ventas. ajustar factura
+- Si una factura tiene mas de un articulo al anular solo anula la ultima factura encontrada.
+- Revaluo no actuliza transaxion inventario
+- Falta identificador de Q modificada en listado de todas las TR
+- Justificar uso del constructor en fecha.
+- Arreglar forma de contar registros
+- cuando busco x fecha dias 1 a 9 puede joder el 0.
+
 
 HECHO:
 - Abrir menu en gestion de compras
@@ -44,6 +45,10 @@ HECHO:
 - REVERSAR ANULACION DE VENTA
 - Actualizar stock no diferencia entre distintos productos
 - Agregar filtro de status en otros reportes
+- Permiter mostrar fecha 01, que sea lo mismo que poner 1.
+- mostrar la misma orden de info en report compras y ventas. ajustar factura.
+- muestra mensaje de factura anulada cuando lo es
+- modificar Q de venta en factura de ventas
 
 Observaciones:
 - Leer files completo con fseek
@@ -52,3 +57,6 @@ Observaciones:
 - Duplica los files compras y ventas podria usarse solo transaccion de inv.
 - Al anular venta o compra no actualiza file inventario
 - testear si sigue sumando los registros anulados
+- modificar Q de compra en factura de compras
+- Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
+

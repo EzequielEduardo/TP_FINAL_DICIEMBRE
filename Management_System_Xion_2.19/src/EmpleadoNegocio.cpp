@@ -11,11 +11,11 @@
 
 using namespace std;
 
-bool EmpleadoNegocio::guardarDatos(Empleado supplier)
+bool EmpleadoNegocio::guardarDatos(Empleado Employee)
 {
 
     EmpleadoFile archivo;
-    return archivo.grabarEnDisco(supplier);
+    return archivo.grabarEnDisco(Employee);
 
 }
 
@@ -28,7 +28,7 @@ Empleado* EmpleadoNegocio::Cargar_Vector_de_Empleados()
 return vectorEmpleados;
 }
 
-int EmpleadoNegocio::CantidadDeSupplier()
+int EmpleadoNegocio::CantidadDeRegEmpleados()
 {
 
     EmpleadoFile archivo;

@@ -93,6 +93,7 @@ void CompraNegocio::ReversarAnulacionCompra(const char * invoice){
 	CompraFile reg;
 	TransaxInventario obj;
 	CompraVista obj2;
+	TransaxinventarioNegocio stock;
 	int pos = buscarPosicionInvoice(invoice);
 	if (pos >= 0){ 		//porque lo encuentra
 
@@ -101,6 +102,7 @@ void CompraNegocio::ReversarAnulacionCompra(const char * invoice){
 			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageReversoAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+			stock.actualizarstock(1,obj);
 		}
 	 else{
 				obj2.messageAnulacionNotOK();

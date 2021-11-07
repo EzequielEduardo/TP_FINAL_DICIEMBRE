@@ -10,7 +10,7 @@ class Persona
 
 		char nombre[50];
         char apellido [50];
-        int cuil;
+        char cuil[50];
         char domicilio[50];
         char localidad[50];
         int telefono;
@@ -23,7 +23,7 @@ class Persona
 
 		void setNombre(const char*);
         void setApellido(const char*);
-        void setCuil(int );
+        void setCuil(const char* );
         void setDomicilio(const char*);
         void setLocalidad(const char*);
         void setTelefono(int);
@@ -34,7 +34,7 @@ class Persona
 
         const char* getNombre();
         const char* getApellido();
-        int         getCuil();
+		const char*   		getCuil();
         const char* getDomicilio();
         const char* getLocalidad();
         int         getTelefono();

@@ -9390,7 +9390,7 @@
 
 1635129100 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\articulovista.h
 
-1635132008 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\articulovista.cpp
+1636309503 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\articulovista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9414,7 +9414,7 @@
 	"Persona.h"
 	"Fecha.h"
 
-1635129100 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\persona.h
+1636285465 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\persona.h
 	"Persona.h"
 
 1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\clientefile.cpp
@@ -9447,7 +9447,7 @@
 	"ClienteNegocio.h"
 	"Cliente.h"
 
-1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\clientevista.cpp
+1636309143 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\clientevista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9478,7 +9478,7 @@
 1636051599 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\transaxinventariofile.h
 	"Transaxinventario.h"
 
-1636251402 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\compranegocio.cpp
+1636323859 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\compranegocio.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9496,7 +9496,7 @@
 1636201174 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\transaxinventarionegocio.h
 	"Transaxinventario.h"
 
-1636251389 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\compravista.cpp
+1636315633 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\compravista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9530,12 +9530,12 @@
 	"EmpleadoFile.h"
 	"Empleado.h"
 
-1635129100 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\empleadonegocio.h
+1636255218 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\empleadonegocio.h
 	"Empleado.h"
 
 1635129100 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\empleadofile.h
 
-1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\empleadonegocio.cpp
+1636257011 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\empleadonegocio.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9551,7 +9551,7 @@
 	"EmpleadoNegocio.h"
 	"Empleado.h"
 
-1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\empleadovista.cpp
+1636308486 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\empleadovista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9563,7 +9563,7 @@
 	"EmpleadoVista.h"
 	"EmpleadoNegocio.h"
 
-1636168973 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\fecha.cpp
+1636310916 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\fecha.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9571,7 +9571,7 @@
 	<cstring>
 	"Fecha.h"
 
-1636249891 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\menuprincipal.cpp
+1636308925 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\menuprincipal.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9607,7 +9607,7 @@
 
 1635476624 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\transaxinventariovista.h
 
-1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\persona.cpp
+1636308348 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\persona.cpp
 	<clocale>
 	<cstdlib>
 	<cstdio>
@@ -9644,7 +9644,7 @@
 	"ProveedorNegocio.h"
 	"ProveedorVista.h"
 
-1635129100 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\proveedorvista.cpp
+1636309503 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\proveedorvista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9696,10 +9696,10 @@
 1635982547 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\ventafile.h
 	"Transaxinventario.h"
 
-1636201256 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\ventanegocio.h
+1636311542 c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\include\ventanegocio.h
 	"Transaxinventario.h"
 
-1636202137 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\ventanegocio.cpp
+1636311567 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\ventanegocio.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9712,8 +9712,9 @@
 	"Transaxinventario.h"
 	"VentaVista.h"
 	"TransaxinventarioNegocio.h"
+	"ArticuloNegocio.h"
 
-1636202126 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\ventavista.cpp
+1636314629 source:c:\users\ujmvare\desktop\pers\lab ii 2do. cuat\repositorio\lab-ii-2c\tp_final_diciembre\management_system_xion_2.19\src\ventavista.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -9721,7 +9722,7 @@
 	<cstdio>
 	<string.h>
 	<iomanip>
-	"ArticuloNegocio.h"
+	"CompraVista.h"
 	"TransaxinventarioNegocio.h"
 	"Transaxinventario.h"
 	"VentaNegocio.h"

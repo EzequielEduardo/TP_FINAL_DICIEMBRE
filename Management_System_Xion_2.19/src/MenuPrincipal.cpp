@@ -141,7 +141,7 @@ void MenuPrincipal::submenuInventarios(){
 
     do
     {
-		cout<<"MENU DE INVENTARIOS"<<endl<<endl;
+		cout<<"SUBMENU DE INVENTARIOS"<<endl<<endl;
 		cout<<"1-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK COMPLETO"<<endl;
 		cout<<"2-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA CATEGORIA"<<endl;
 		cout<<"3-LISTAR TODAS LAS TRANSACCIONES SOBRE EL STOCK DE UNA MARCA"<<endl;

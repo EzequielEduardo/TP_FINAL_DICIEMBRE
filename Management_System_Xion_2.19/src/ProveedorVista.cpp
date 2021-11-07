@@ -67,9 +67,10 @@ bool ProveedorVista::cargarProveedores()
     char cadena[50];
     int numero,dia,mes,anio;
 
-    cout << "Datos del Proveedor:" << endl;
+    cout << "Ingrese Datos del Proveedor:" << endl;
 
 	cout<<"Fecha de Incorporacion: ";
+	cout<<endl;
     cout<<"Dia: ";
     cin>>dia;
     cout<<"Mes: ";
@@ -90,8 +91,8 @@ bool ProveedorVista::cargarProveedores()
 	datos.setApellido(cadena);
 
     cout<< "CUIL: ";
-    cin>>numero;
-    datos.setCuil(numero);
+	negocio.cargarCadena(cadena,50);
+    datos.setCuil(cadena);
 
     cout<< "Domicilio: ";
 
@@ -119,7 +120,7 @@ bool ProveedorVista::cargarProveedores()
 	datos.setCondicionDePago(cadena);
 
 	cout<<"Fecha de Incorporacion: ";
-	//datos.setFechadeIncorporacion(numero);
+
 
 
     return negocio.guardarDatos(datos);
@@ -131,12 +132,10 @@ void ProveedorVista::mostrarProveedores()
     ProveedorNegocio negocio;
     Proveedor *vectorProveedores;
     vectorProveedores= negocio.Cargar_Vector_de_Proveedores();
-
+	cout<<"MAESTRO DE PROVEEDORES"<<endl;
     for(int x=0; x < negocio.CantidadDeSupplier(); x++)
     {
-		cout<< "Anio de Incorporacion: "<<vectorProveedores[x].getFechadeIncorporacion().getAnio() <<endl;
-        cout<< "Mes de Incorporacion: "<<vectorProveedores[x].getFechadeIncorporacion().getMes() <<endl;
-		cout<< "Dia de Incorporacion: "<<vectorProveedores[x].getFechadeIncorporacion().getDia() <<endl;
+		cout<< "Fecha de Incorporacion: ";vectorProveedores[x].getFechadeIncorporacion().MostrarFecha();
         cout<< "Nombre: "<<vectorProveedores[x].getNombre() <<endl;
         cout<< "Apellido: "<<vectorProveedores[x].getApellido() <<endl;
         cout<< "CUIL: "<<vectorProveedores[x].getCuil() <<endl;

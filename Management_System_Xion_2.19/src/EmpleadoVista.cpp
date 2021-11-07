@@ -69,10 +69,10 @@ bool EmpleadoVista::cargarEmpleados()
     int numero,dia,mes,anio;
     float sueldo;
 
-    cout << "Datos del Empleado:" << endl;
-    cout<<"Ingresar: "<<endl;
+    cout<<"Ingresar Datos del Empleado: "<<endl;
 
     cout<<"Fecha de nacimiento: ";
+    cout<<endl;
     cout<<"Dia: ";
     cin>>dia;
     cout<<"Mes: ";
@@ -94,8 +94,8 @@ bool EmpleadoVista::cargarEmpleados()
 	datos.setApellido(cadena);
 
     cout<< "CUIL: ";
-    cin>>numero;
-    datos.setCuil(numero);
+	negocio.cargarCadena(cadena,50);
+    datos.setCuil(cadena);
 
     cout<< "Domicilio: ";
 	negocio.cargarCadena(cadena,50);
@@ -132,11 +132,9 @@ void EmpleadoVista::mostrarEmpleados()
     Empleado *vectorEmpleados;
 
     vectorEmpleados=negocio.Cargar_Vector_de_Empleados();
-
-        for(int x;x<negocio.CantidadDeSupplier();x++){
-        cout<< "Anio de Nacimiento: "<<vectorEmpleados[x].getFechadeNacimiento().getAnio() <<endl;
-        cout<< "Mes de Nacimiento: "<<vectorEmpleados[x].getFechadeNacimiento().getMes() <<endl;
-		cout<< "Dia de Nacimiento: "<<vectorEmpleados[x].getFechadeNacimiento().getDia() <<endl;
+		cout<<"MAESTRO DE EMPLEADOS"<<endl;
+        for(int x;x<negocio.CantidadDeRegEmpleados();x++){
+        cout<< "Fecha de Nacimiento: ";vectorEmpleados[x].getFechadeNacimiento().MostrarFecha();
         cout<< "Nombre: "<<vectorEmpleados[x].getNombre() <<endl;
         cout<< "Apellido: "<<vectorEmpleados[x].getApellido() <<endl;
         cout<< "CUIL: "<<vectorEmpleados[x].getCuil() <<endl;
@@ -146,7 +144,7 @@ void EmpleadoVista::mostrarEmpleados()
         cout<< "E-mail: "<<vectorEmpleados[x].getEmail() <<endl;
         cout<<"turno: "<<vectorEmpleados[x].getTurno() <<endl;
 		cout<<"Sueldo: "<<vectorEmpleados[x].getSueldo() <<endl;
-		//cout<<"Fecha de Nacimiento: "<<vectorEmpleados[x].getFechadeNacimiento() <<endl;
+
 
         cout<< "-------------------------"<<endl;}
 

@@ -10,7 +10,7 @@ using namespace std;
 
         void Persona::setNombre(const char *cadena){strcpy(nombre,cadena);  }
         void Persona::setApellido(const char* cadena){strcpy(apellido,cadena);}
-        void Persona::setCuil(int n){cuil=n;}
+        void Persona::setCuil(const char* nro){strcpy(cuil,nro);}
         void Persona::setDomicilio(const char* cadena){strcpy(domicilio,cadena);}
         void Persona::setLocalidad(const char* cadena){strcpy(localidad,cadena);}
         void Persona::setTelefono(int n){telefono=n;}
@@ -20,7 +20,7 @@ using namespace std;
 
         const char* Persona::getNombre(){return nombre;}
         const char* Persona::getApellido(){return apellido;}
-        int         Persona::getCuil(){return cuil;}
+        const char*	Persona::getCuil(){return cuil;}
         const char* Persona::getDomicilio(){return domicilio;}
         const char* Persona::getLocalidad(){return localidad;}
         int         Persona::getTelefono(){return telefono;}

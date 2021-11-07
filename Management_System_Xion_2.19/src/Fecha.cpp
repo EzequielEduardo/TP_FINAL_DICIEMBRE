@@ -8,8 +8,10 @@
 //Muestra la fecha en formato número. Ej.:  15/10/2008
 void Fecha::MostrarFecha()
 {
-if(dia<10 || mes<10) cout<<"0"<<dia<<"/"<<"0"<<mes<<"/"<<anio<<endl;
-else cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+if(dia<10  && mes>=10) cout<<"0"<<dia<<"/"<<mes<<"/"<<anio<<endl;
+if(dia<10 && mes<10) cout<<"0"<<dia<<"/"<<"0"<<mes<<"/"<<anio<<endl;
+if(dia>=10  && mes<10) cout<<dia<<"/"<<"0"<<mes<<"/"<<anio<<endl;
+if(dia>=10  && mes>=10) cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
 
 }
 

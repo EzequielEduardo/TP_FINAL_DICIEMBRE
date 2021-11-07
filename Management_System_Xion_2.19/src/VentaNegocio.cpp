@@ -11,7 +11,7 @@
 #include"Transaxinventario.h"
 #include"VentaVista.h"
 #include "TransaxinventarioNegocio.h"
-
+#include"ArticuloNegocio.h"
 using namespace std;
 
 bool VentaNegocio::guardarDatos(TransaxInventario articulo)
@@ -113,3 +113,12 @@ void VentaNegocio::ModifQenFacturaDeVtas(const char * invoice){
     cout << endl << endl;
 
 }
+
+
+	bool VentaNegocio::ValidacionDeArticulo(const char * id){
+	ArticuloNegocio obj;
+	if(obj.buscarPosicion(id)>=0) return 1;
+	else return 0;
+
+
+	}

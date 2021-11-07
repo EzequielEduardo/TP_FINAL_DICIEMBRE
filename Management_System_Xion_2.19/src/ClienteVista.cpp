@@ -68,11 +68,10 @@ bool ClienteVista::cargarCliente()
     char cadena[50];
     int numero, dia, mes, anio;
 
-    cout << "Datos del Cliente:" << endl;
-    cout<<"Ingresar: "<<endl;
+    cout<<"Ingresar Datos del Cliente: "<<endl;
 
 	cout<<"Fecha de nacimiento: ";
-
+    cout<<endl;
     cout<<"Dia: ";
     cin>>dia;
     cout<<"Mes: ";
@@ -93,8 +92,8 @@ bool ClienteVista::cargarCliente()
 	datos.setApellido(cadena);
 
     cout<< "CUIL: ";
-    cin>>numero;
-    datos.setCuil(numero);
+	negocio.cargarCadena(cadena,50);
+    datos.setCuil(cadena);
 
     cout<< "Domicilio: ";
 
@@ -135,12 +134,9 @@ void ClienteVista::mostrarClientes()
     Cliente *vectorClientes;
 
     vectorClientes=negocio.Cargar_Vector_de_Clientes();///get_clientes
-
+		cout<<"MAESTRO DE CLIENTES"<<endl;
         for(int x;x<negocio.CantidadDeClientes();x++){
 		cout<< "Fecha de Incorporacion: ";vectorClientes[x].getFechadeIncorporacion().MostrarFecha();
-		cout<< "Anio de Incorporacion: "<<vectorClientes[x].getFechadeIncorporacion().getAnio() <<endl;
-        cout<< "Mes de Incorporacion: "<<vectorClientes[x].getFechadeIncorporacion().getMes() <<endl;
-		cout<< "Dia de Incorporacion: "<<vectorClientes[x].getFechadeIncorporacion().getDia() <<endl;
         cout<< "Nombre: "<<vectorClientes[x].getNombre() <<endl;
         cout<< "Apellido: "<<vectorClientes[x].getApellido() <<endl;
         cout<< "CUIL: "<<vectorClientes[x].getCuil() <<endl;
@@ -150,7 +146,6 @@ void ClienteVista::mostrarClientes()
         cout<< "E-mail: "<<vectorClientes[x].getEmail() <<endl;
         cout<<"Condicion Fiscal: "<<vectorClientes[x].getCondicionFiscal() <<endl;
 		cout<<"Condicion de Cobro: "<<vectorClientes[x].getCondicionDeCobro() <<endl;
-		//cout<<"Fecha de Incorporacion: "<<vectorClientes[x].getFechadeIncorporacion() <<endl;
         cout<< "-------------------------"<<endl;}
 
     delete vectorClientes;
