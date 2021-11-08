@@ -14,7 +14,6 @@ class  ProveedorNegocio
 	bool guardarDatos(Proveedor);
 	Proveedor* Cargar_Vector_de_Proveedores();
 	int CantidadDeSupplier();
-
 	void cargarCadena(char *pal, int tam);
 };
 

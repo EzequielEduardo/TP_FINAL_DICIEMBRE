@@ -1,25 +1,20 @@
 Agregar las consultas que faltan:
 
-
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase.
 
 Validaciones:
 - Al cargar la venta el cliente ingresado existe en el maestro
-- Al cargar la compra el proveedoringresado existe en el maestro
+- Al cargar la compra el proveedor ingresado existe en el maestro
 - Al cargar marca validar con las existentes en el master.
 - Al cargar categoria Validar con existentes en el master.
 - Al buscar factura x Fecha compra y venta
 
 Otros TO DO:
-- test unitario de todo y ver si corresponde mostrar facturas anuladas al listar ventas o compras. 
-- carga datos reales
 - hacer video explicativo
-- actualizar Informe + diagrama
-- Si una factura tiene mas de un articulo al anular solo anula la ultima factura encontrada.
-- Revaluo no actuliza transaxion inventario
+- Actualizar diagrama
+- Si una factura tiene mas de un articulo al anular solo anula el ultimo elemento de factura.
+- Revaluo no actuliza transaxion inventario.
 - Falta identificador de Q modificada en listado de todas las TR
-- Justificar uso del constructor en fecha.
-- Arreglar forma de contar registros
 - cuando busco x fecha dias 1 a 9 puede joder el 0.
 
 
@@ -49,14 +44,19 @@ HECHO:
 - mostrar la misma orden de info en report compras y ventas. ajustar factura.
 - muestra mensaje de factura anulada cuando lo es
 - modificar Q de venta en factura de ventas
+- modificar Q de compra en factura de compras
+- test unitario de todo y ver si corresponde mostrar facturas anuladas al listar ventas o compras. 
+- carga datos reales
+- actualizar Informe 
+- Arreglar forma de contar registros
+- Leer files completo con fseek
+- Al anular venta o compra no actualiza file inventario
+- testear si sigue sumando los registros anulados
+- Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 
 Observaciones:
-- Leer files completo con fseek
 - Mejorar estetica del menu
 - Formato de tabla en listar
 - Duplica los files compras y ventas podria usarse solo transaccion de inv.
-- Al anular venta o compra no actualiza file inventario
-- testear si sigue sumando los registros anulados
-- modificar Q de compra en factura de compras
-- Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
+
 

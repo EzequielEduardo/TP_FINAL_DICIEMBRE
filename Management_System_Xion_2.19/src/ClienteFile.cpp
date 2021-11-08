@@ -28,30 +28,26 @@ Cliente* ClienteFile::obtener_Datos_Clientes(){
         p=fopen("Cliente.dat","rb");
         if(p==NULL) return 0;
 
-        for(pos;pos<cant;pos++){
-
         fseek(p, pos*sizeof (Cliente), 0);
-        fread(&vectorClientes[pos], sizeof (Cliente), 1, p);
+        fread(&vectorClientes[pos], sizeof (Cliente), cant, p);
 
-        }
-
-        fclose(p);
+		fclose(p);
         return vectorClientes;
     }
 
     int ClienteFile::cantidadDeDatosGrabados(){
 
         Cliente cliente;
-        int cantidad=0;
+        int bytes, Qregistros=0;
 
         FILE *p;
         p=fopen("Cliente.dat","rb");
         if(p==NULL) return false;
 
-        while(fread(&cliente, sizeof (Cliente), 1, p)==true)cantidad++;
-
-
-        fclose(p);
-        return cantidad;
+       fseek(p, 0, SEEK_END);
+		bytes = ftell(p);
+		Qregistros = bytes / sizeof(Cliente);
+		fclose(p);
+        return Qregistros;
     }
 

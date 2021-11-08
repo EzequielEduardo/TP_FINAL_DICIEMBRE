@@ -11,7 +11,6 @@ class ArticuloFile
 		bool grabarEnDisco(Articulo obj,int pos);
         Articulo* obtener_Datos_Articulos();
         int  cantidadDeDatosGrabados();
-
 		float getPrecioArticulo(const char * IdArticulo);
         bool leerArticulo(Articulo &,int pos);
 

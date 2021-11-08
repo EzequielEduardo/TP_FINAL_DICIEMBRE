@@ -12,12 +12,8 @@ class ProveedorVista
 
 
 	public:
-
-
     void menuProveedores();
-
 	bool cargarProveedores();
-
 	void mostrarProveedores();
 
 

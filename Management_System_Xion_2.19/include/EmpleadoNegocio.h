@@ -15,7 +15,6 @@ class  EmpleadoNegocio
 	bool guardarDatos(Empleado);
 	Empleado* Cargar_Vector_de_Empleados();
 	int CantidadDeRegEmpleados();
-
 	void cargarCadena(char *pal, int tam);
 };
 

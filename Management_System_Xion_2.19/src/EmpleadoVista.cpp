@@ -81,7 +81,7 @@ bool EmpleadoVista::cargarEmpleados()
     cin>>anio;
 
 
-	Empleado datos (dia,mes,anio);
+	Empleado datos(dia,mes,anio);
 
 
     cout<< "Nombre: ";

@@ -27,12 +27,9 @@ Empleado* EmpleadoFile::obtener_Datos_de_Empleados(){
         p=fopen("Empleado.dat","rb");
         if(p==NULL) return 0;
 
-        for(pos;pos<cant;pos++){
-
         fseek(p, pos*sizeof (Empleado), 0);
-        fread(&vectorEmpleado[pos], sizeof (Empleado), 1, p);
+        fread(&vectorEmpleado[pos], sizeof (Empleado), cant, p);
 
-        }
         fclose(p);
         return  vectorEmpleado;
     }
@@ -40,15 +37,16 @@ Empleado* EmpleadoFile::obtener_Datos_de_Empleados(){
     int EmpleadoFile::cantidadDeDatosGrabados(){
 
         Empleado Empleado;
-        int cantidad=0;
+        int bytes, Qregistros=0;
 
         FILE *p;
         p=fopen("Empleado.dat","rb");
         if(p==NULL) return false;
 
-        while(fread(&Empleado, sizeof (Empleado), 1, p)==true)cantidad++;
-
+       fseek(p, 0, SEEK_END);
+		bytes = ftell(p);
+		Qregistros = bytes / sizeof(Empleado);
 
         fclose(p);
-        return cantidad;
+        return Qregistros;
     }

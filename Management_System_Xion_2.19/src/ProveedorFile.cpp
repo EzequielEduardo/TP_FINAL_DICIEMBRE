@@ -28,12 +28,9 @@ Proveedor* ProveedorFile::obtener_Datos_de_Proveedor(){
         p=fopen("Proveedor.dat","rb");
         if(p==NULL) return 0;
 
-        for(pos;pos<cant;pos++){
-
         fseek(p, pos*sizeof (Proveedor), 0);
-        fread(&vectorProveedor[pos], sizeof (Proveedor), 1, p);
+        fread(&vectorProveedor[pos], sizeof (Proveedor), cant, p);
 
-        }
         fclose(p);
         return  vectorProveedor;
     }
@@ -41,15 +38,15 @@ Proveedor* ProveedorFile::obtener_Datos_de_Proveedor(){
     int ProveedorFile::cantidadDeDatosGrabados(){
 
         Proveedor Proveedor;
-        int cantidad=0;
+        int bytes, Qregistros=0;
 
         FILE *p;
         p=fopen("Proveedor.dat","rb");
         if(p==NULL) return false;
 
-        while(fread(&Proveedor, sizeof (Proveedor), 1, p)==true)cantidad++;
-
-
-        fclose(p);
-        return cantidad;
+        fseek(p, 0, SEEK_END);
+		bytes = ftell(p);
+		Qregistros = bytes / sizeof(Proveedor);
+		fclose(p);
+        return Qregistros;
     }

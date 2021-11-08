@@ -12,7 +12,6 @@ class ArticuloNegocio
 	Articulo* Cargar_Vector_de_Articulos();
 	int CantidadDeArticulos();
 	void cargarCadena(char *pal, int tam);
-	void completarDatosDeTransaccion(TransaxInventario&);
 	float ModificarPreciodeArt(const char *);
 	int buscarPosicion(const char *id);
 };

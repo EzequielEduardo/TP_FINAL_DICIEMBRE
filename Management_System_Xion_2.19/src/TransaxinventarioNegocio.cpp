@@ -6,7 +6,7 @@
 int TransaxinventarioNegocio::buscarPosicionIDArticulo(const char *id){
     TransaxInventario reg;
     TransaxinventarioFile obj;
-    int pos = 0;//obj.cantidadDeTransaxGrabadas();
+    int pos = 0;
     int maxpos = 0;
     while(obj.leerCompra_vta(reg, pos)){ // Mandar a vista file
         if (strcmp(id, reg.getTRID_Articulo()) == 0 && pos>maxpos){
@@ -99,12 +99,6 @@ TransaxInventario* TransaxinventarioNegocio::Cargar_Vector_de_Stocks()
 return vectorStocks;
 }
 
-/*
-float getStock(){
-TransaxinventarioFile archivo;
-return archivo.getStock();
-}
-*/
 
 //METODOS COMPRAS
 bool TransaxinventarioNegocio::guardarDatosCompra(TransaxInventario compra)
@@ -131,8 +125,6 @@ int TransaxinventarioNegocio::CantidadDeCompras()
     return archivo.cantidadDeDatosComprasGrabadas();
 
 }
-
-
 
 
 //METODOS VENTAS
@@ -162,21 +154,5 @@ int TransaxinventarioNegocio::CantidadDeVentas()
 }
 
 
-void TransaxinventarioNegocio::MostrarVtasxFecha(TransaxInventario reg){
 
-	TransaxInventario *vectorStock=Cargar_Vector_de_Stocks(); // vector que contiene todo el file inventario
-
-	  for(int x=0;x<CantidadDeTransax();x++){
-			if(reg.getFechaTransax()==vectorStock[x].getFechaTransax() &&
-				strcmp(reg.getTRID_Articulo(),vectorStock[x].getTRID_Articulo())==0 &&
-				strcmp("venta",vectorStock[x].getTipoTransax())==0){
-				cout<<"CODIGO DE ARTICULO: "<<vectorStock[x].getTRID_Articulo()<<endl;
-				cout<<"CATEGORIA: "<<vectorStock[x].getCategoria()<<endl;
-				cout<<"MARCA: "<<vectorStock[x].getMarca()<<endl;
-				cout<<"CANTIDAD VENDIDA: "<<vectorStock[x].getTRCantidad()<<endl;
-				cout<<"PRECIO DE ARTICULO VENDIDO: "<<vectorStock[x].getTRprecioUnitario()<<endl;
-				system("pause");
-			}
-}
-}
 

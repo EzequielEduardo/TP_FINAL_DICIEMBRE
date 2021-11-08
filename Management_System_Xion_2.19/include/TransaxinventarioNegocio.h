@@ -9,6 +9,7 @@ class TransaxinventarioNegocio
 	int CantidadDeTransax();
 	void cargarCadena(char *pal, int tam);
 	TransaxInventario* Cargar_Vector_de_Stocks();
+
     //float getStock();
     void MostrarStockxFecha(TransaxInventario);
     int buscarPosicionIDArticulo(const char *id);
@@ -22,9 +23,6 @@ class TransaxinventarioNegocio
 	TransaxInventario* Cargar_Vector_de_Ventas();
 	int CantidadDeVentas();
 	bool guardarDatosVenta(TransaxInventario);
-
-    void MostrarVtasxFecha(TransaxInventario);
-
 
 };
 

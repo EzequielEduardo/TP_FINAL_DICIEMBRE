@@ -56,16 +56,6 @@ class TransaxInventario
 		TransaxInventario(){};
         TransaxInventario(int,int,int);
 
-        //sobrecarga de operadores para comparar fechas
-     /*   bool operator==(TransaxInventario obj){
-        if(fechaTransax.getAnio()==obj.getFechaTransax().getAnio()) return true;
-        if(fechaTransax.getMes()==obj.getFechaTransax().getMes()) return true;
-		if(fechaTransax.getDia()==obj.getFechaTransax().getDia()) return true;
-		if(fechaTransax.getAnio()!=obj.getFechaTransax().getAnio()) return false;
-        if(fechaTransax.getMes()!=obj.getFechaTransax().getMes()) return false;
-		if(fechaTransax.getDia()!=obj.getFechaTransax().getDia()) return false;
-        }
-*/
-};
+	  };
 
 #endif // TRANSAXINVENTARIO_H

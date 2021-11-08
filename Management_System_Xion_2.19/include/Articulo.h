@@ -19,8 +19,7 @@ class Articulo
         void setCategoria(const char* );
 
         const char*  getID_Articulo();
-        float getprecioUnitario();
-        void menuArticulos();
+        float 		 getprecioUnitario();
         const char*  getMarca();
         const char*  getCategoria();
 };

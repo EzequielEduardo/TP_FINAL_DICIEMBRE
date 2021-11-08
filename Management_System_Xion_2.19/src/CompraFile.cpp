@@ -41,12 +41,8 @@ TransaxInventario* CompraFile::obtener_Datos_Compras(){
         p=fopen("Compras.dat","rb");
         if(p==NULL) return 0;
 
-        for(pos;pos<cant;pos++){
-
         fseek(p, pos*sizeof (TransaxInventario), 0);
-        fread(&vectorCompras[pos], sizeof (TransaxInventario), 1, p);
-
-        }
+        fread(&vectorCompras[pos], sizeof (TransaxInventario), cant, p);
 
         fclose(p);
         return vectorCompras;

@@ -28,11 +28,8 @@ bool TransaxinventarioFile::grabarDatosInventario(TransaxInventario compra_venta
     p=fopen("Inventario.dat","rb");
     if(p==NULL) return 0;
 
-    for(pos; pos<cant; pos++)
-    {
         fseek(p, pos*sizeof (TransaxInventario), 0);
-        fread(&vectorInventario[pos], sizeof (TransaxInventario), 1, p);
-    }
+        fread(&vectorInventario[pos], sizeof (TransaxInventario), cant, p);
 
     fclose(p);
     return vectorInventario;
@@ -43,17 +40,18 @@ int TransaxinventarioFile::cantidadDeTransaxGrabadas()
 {
 
     TransaxInventario inventario;
-    int cantidad=0;
+        int bytes, Qregistros=0;
 
     FILE *p;
     p=fopen("Inventario.dat","rb");
     if(p==NULL) return false;
 
-    while(fread(&inventario, sizeof (TransaxInventario), 1, p)==true)cantidad++;
+        fseek(p, 0, SEEK_END);
+		bytes = ftell(p);
+		Qregistros = bytes / sizeof(TransaxInventario);
+		fclose(p);
 
-
-    fclose(p);
-    return cantidad;
+    return Qregistros;
 }
 
 int TransaxinventarioFile::getStock(int pos){

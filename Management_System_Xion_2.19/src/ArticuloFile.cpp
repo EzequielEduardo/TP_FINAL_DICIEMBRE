@@ -38,12 +38,8 @@ Articulo* ArticuloFile::obtener_Datos_Articulos(){
         p=fopen("Articulos.dat","rb");
         if(p==NULL) return 0;
 
-        for(pos;pos<cant;pos++){
-
         fseek(p, pos*sizeof (Articulo), 0);
-        fread(&vectorArticulos[pos], sizeof (Articulo), 1, p);
-
-        }
+        fread(&vectorArticulos[pos], sizeof (Articulo), cant, p);
 
         fclose(p);
         return vectorArticulos;
@@ -52,19 +48,19 @@ Articulo* ArticuloFile::obtener_Datos_Articulos(){
     int ArticuloFile::cantidadDeDatosGrabados(){
 
         Articulo articulo;
-        int cantidad=0;
+        int bytes, Qregistros=0;
 
         FILE *p;
         p=fopen("Articulos.dat","rb");
         if(p==NULL) return false;
 
-        while(fread(&articulo, sizeof (Articulo), 1, p)==true)cantidad++;
+        fseek(p, 0, SEEK_END);
+		bytes = ftell(p);
+		Qregistros = bytes / sizeof(Articulo);
+		fclose(p);
 
-
-        fclose(p);
-        return cantidad;
+        return Qregistros;
     }
-
 
 
     float ArticuloFile::getPrecioArticulo(const char * IdArticulo){

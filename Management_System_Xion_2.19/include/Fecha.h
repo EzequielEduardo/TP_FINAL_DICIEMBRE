@@ -24,7 +24,7 @@ class Fecha
     int getMes(){return mes;}
     int getAnio(){return anio;}
 
-    void setFecha(int d=0,int m=0,int a=0);
+   void setFecha(int d=0,int m=0,int a=0);
     void setDia(int d){dia=d;}
     void setMes(int m){mes=m;};
     void setAnio(int a){anio=a;}
