@@ -37,12 +37,10 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
 
     if(tipoTrans==0 ) // 0 es venta
     {
-        compra_vta.setTipoTransax(0);
-        stock-=compra_vta.getTRCantidad();
+       stock-=compra_vta.getTRCantidad();
     }
     else {
-        compra_vta.setTipoTransax(1); //1 es compra
-        stock+=compra_vta.getTRCantidad();
+       stock+=compra_vta.getTRCantidad();
     }
         compra_vta.setStock(stock);
 
@@ -55,13 +53,11 @@ void TransaxinventarioNegocio::actualizarstock(bool tipoTrans,TransaxInventario 
 	else{	// si el producto no esta en stock. Primer ingreso al stock, entonces no busco stock inicial
 		if(tipoTrans==0 ) // 0 es venta
     {
-        compra_vta.setTipoTransax(0);
-        stock-=compra_vta.getTRCantidad();
+       stock-=compra_vta.getTRCantidad();
 
     }
     else
     {
-        compra_vta.setTipoTransax(1); //1 es compra
         stock+=compra_vta.getTRCantidad();
     }
         compra_vta.setStock(stock);
@@ -214,28 +210,6 @@ void TransaxinventarioNegocio::actualizarstockModifQ(int tipoTrans,TransaxInvent
         archivo.grabarDatosInventario(compra_vta);
 	}
 
-	else{	// si el producto no esta en stock. Primer ingreso al stock, entonces no busco stock inicial
-		if(tipoTrans==3 ) // 0 es venta
-    {
-        compra_vta.setTipoTransax(3);
-
-        stock-=NewQ-compra_vta.getTRCantidad();
-
-    }
-    else
-    {
-        compra_vta.setTipoTransax(2); //2 es  MODIF DE compra
-        stock-=NewQ-compra_vta.getTRCantidad();
-    }
-        compra_vta.setStock(stock);
-
-        float precioOK= reg.getPrecioArticulo(compra_vta.getTRID_Articulo());
-        float stockValorizado=stock*precioOK;
-        compra_vta.setStockValorizado(stockValorizado);
-        compra_vta.setTRCantidad(0);
-        archivo.grabarDatosInventario(compra_vta);
-
-	}
 }
 
 

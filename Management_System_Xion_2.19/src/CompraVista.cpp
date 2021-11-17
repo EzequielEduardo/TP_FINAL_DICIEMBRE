@@ -66,6 +66,8 @@ bool CompraVista::cargarCompras()
 
 	compra.setStatus(true);
 
+	compra.setTipoTransax(1);
+
     negocio.actualizarstock(1,compra); //  llamo al metodo de la clase TransaxinventarioNegocio que va a modificar el stock y stockValorizado
     return negocio.guardarDatosCompra(compra); // guarda reg en file compras.dat
 }

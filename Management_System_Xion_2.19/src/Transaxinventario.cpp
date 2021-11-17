@@ -22,6 +22,10 @@
 				if(n==1)strcpy(tipoTransax,"Compra\0");
 				if(n==2)strcpy(tipoTransax,"Modificacion de Compra\0");
 				if(n==3)strcpy(tipoTransax,"Modificacion de Venta\0");
+				if(n==4)strcpy(tipoTransax,"Anulacion de Venta\0");
+				if(n==5)strcpy(tipoTransax,"Anulacion de Compra\0");
+				if(n==6)strcpy(tipoTransax,"Reverso de Anulacion de Compra\0");
+				if(n==7)strcpy(tipoTransax,"Reverso de Anulacion de Venta\0");
             }
 
 

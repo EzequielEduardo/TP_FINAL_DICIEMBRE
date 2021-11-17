@@ -66,6 +66,7 @@ bool VentaVista::cargarVentas()
     venta.setTRprecioUnitario(decimal);
 
 	venta.setStatus(true);
+	venta.setTipoTransax(0);
 
     negocio.actualizarstock(0,venta);
 

@@ -54,6 +54,7 @@ void VentaNegocio::AnularVenta(const char * invoice){
 
 			reg.leerVenta(obj,pos);
 			obj.setStatus(false); //camio el estado para que no lo muestre. Baja logica
+			obj.setTipoTransax(4);
 			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
@@ -78,6 +79,7 @@ void VentaNegocio::ReversarAnulacionVenta(const char * invoice){
 			reg.leerVenta(obj,pos);
 			obj.setStatus(true); //cambio el estado para que no lo muestre. Baja logica
 			obj.setTRCantidad(obj.getTRCantidad()*-1);
+			obj.setTipoTransax(7);
 			obj2.messageReversoAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
 			stock.actualizarstock(0,obj);
@@ -101,10 +103,11 @@ void VentaNegocio::ModifQenFacturaDeVtas(const char * invoice){
 
 			reg.leerVenta(obj,pos);
 			int NewQ = obj2.PideNewQFacturaVtas();
+			stock.actualizarstockModifQ(3,obj,NewQ);
 			obj.setTRCantidad(NewQ);
 			obj2.messageFacturaModifOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
-			stock.actualizarstock(0,obj);
+
 		}
 	 else{
 				obj2.messageAnulacionNotOK();

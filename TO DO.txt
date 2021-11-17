@@ -2,25 +2,30 @@ Agregar las consultas que faltan:
 
 -Homogeneizar a nombre atributos, metodos etc, a camelCase o PascalCase.
 
+
 Validaciones:
-- Al cargar la venta el cliente ingresado existe en el maestro
-- Al cargar la compra el proveedor ingresado existe en el maestro
-- Al cargar marca validar con las existentes en el master.
-- Al cargar categoria Validar con existentes en el master.
-- Al buscar factura x Fecha compra y venta
-- Fechas validas
-- CUIT solo numeros
+- Fechas validas.
+- CUIT solo numeros y opciones de menu.
 - Numero de factura, solo numeros y guion en el medio
 - Opciones que solo admita nros
+
+- Al cargar la venta el cliente ingresado existe en el maestro
+- Al cargar la compra el proveedor ingresado existe en el maestro
+- Al cargar categoria Validar con existentes en el master.
+- No pedir la marca al cargar una compra o una venta. tomar del maestro de articulos.
+
+Practica para Final/recuperatorio:
+- listar ventas mayores al promedio
+- listar ventas menores al promedio
+- Agregar al empleado en la venta y mostrar empleado que mas ventas tuvo.
+
 
 Otros TO DO:
 - Mejorar estetica del menu
 - Formato de tabla en listar
 - Duplica los files compras y ventas podria usarse solo transaccion de inv.
-- Mensaje de compra modificada y venta modificada en evol TR
 - Si una factura tiene mas de un articulo al anular solo anula el ultimo elemento de factura.
 - Revaluo no actualiza transaccion inventario.
-- Falta identificador de Q modificada en listado de todas las TR
 - Cuando busco x fecha dias 1 a 9 puede joder el 0.
 - Eliminar y modificar datos clientes, proveedores, empleados
 - Testear cuando hay mas de 2 facturas de un mismo ID
@@ -63,6 +68,6 @@ HECHO:
 - Al cargar la compra o venta validar que el articulo ingresado existe en el maestro
 - Actualizar diagrama
 - Hacer video explicativo
-
-
+- Mensaje de compra modificada y venta modificada en evol TR
+- Falta identificador de Q modificada en listado de todas las TR
 
