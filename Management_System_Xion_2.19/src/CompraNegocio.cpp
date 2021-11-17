@@ -75,6 +75,8 @@ void CompraNegocio::AnularCompra(const char * invoice){
 			obj.setTRCantidad(obj.getTRCantidad()*-1);
 			obj2.messageAnulacionOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
+
+
 			stock.actualizarstock(1,obj);
 
 		}
@@ -118,15 +120,20 @@ void CompraNegocio::ModifQenFacturaDeCompras(const char * invoice){
 	TransaxInventario obj;
 	TransaxinventarioNegocio stock;
 	CompraVista obj2;
-	int pos = buscarPosicionInvoice(invoice);
+	int pos = buscarPosicionInvoice(invoice); //Busco en file compras
 	if (pos >= 0){ 		//porque lo encuentra
 
 			reg.leerCompra(obj,pos);
 			int NewQ = obj2.PideNewQFacturaCompras();
+
+			stock.actualizarstockModifQ(2,obj,NewQ);
 			obj.setTRCantidad(NewQ);
 			obj2.messageFacturaModifOK();
 			reg.grabarEnDisco(obj,pos);//tengo que poner la posicion
-			stock.actualizarstock(1,obj);
+
+			//stock.actualizarstock(1,obj);
+
+
 		}
 	 else{
 				obj2.messageAnulacionNotOK();

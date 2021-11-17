@@ -9,7 +9,7 @@ class CompraVista
 
 	public:
 
-    void menuCompras();
+
 	bool cargarCompras();
 	bool mostrarCompras();
 	void MostrarComprasxFecha();
@@ -19,7 +19,7 @@ class CompraVista
 	void messageReversoAnulacionOK();
 	int PideNewQFacturaCompras();
 	void messageFacturaModifOK();
-	void messageValidacionCompra(bool flagValidacion);
+	void messageValidacionCompra();
 };
 
 #endif // COMPRAVISTA_H

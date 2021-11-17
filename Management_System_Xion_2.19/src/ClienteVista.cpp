@@ -80,7 +80,7 @@ bool ClienteVista::cargarCliente()
     cin>>anio;
 
 	Cliente datos (dia,mes,anio);
-	//datos.setFechadeIncorporacion(dia);
+
 
     cout<< "Nombre: ";
 

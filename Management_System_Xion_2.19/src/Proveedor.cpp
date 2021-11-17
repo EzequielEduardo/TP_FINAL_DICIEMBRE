@@ -9,7 +9,6 @@ using namespace std;
 
         ///sets
 
-
         void Proveedor::setCondicionFiscal(const char *cadena){strcpy(condicionFiscal,cadena); }
         void Proveedor::setCondicionDePago(const char *cadena){strcpy(condicionDePago,cadena); }
 		void Proveedor::setFechadeIncorporacion(Fecha x ){FechadeIncorporacion=x;  }
@@ -20,5 +19,5 @@ using namespace std;
 		const char* Proveedor::getCondicionDePago(){return condicionDePago;}
 		Fecha Proveedor::getFechadeIncorporacion(){return FechadeIncorporacion;}
 
-				//const
+		//const
 		Proveedor::Proveedor(int d,int m,int a){FechadeIncorporacion.setFecha(d,m,a);}

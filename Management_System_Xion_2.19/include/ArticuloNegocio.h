@@ -9,7 +9,7 @@ class ArticuloNegocio
 {
 	public:
 	bool guardarDatos(Articulo);
-	Articulo* Cargar_Vector_de_Articulos();
+	Articulo * Cargar_Vector_de_Articulos(Articulo* vectorArticulos);
 	int CantidadDeArticulos();
 	void cargarCadena(char *pal, int tam);
 	float ModificarPreciodeArt(const char *);

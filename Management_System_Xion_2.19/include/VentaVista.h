@@ -10,7 +10,7 @@ class VentaVista
 	public:
 
 
-    void menuVentas();
+
 	bool cargarVentas();
 	bool mostrarVentas();
 	void MostrarVtasxFecha();

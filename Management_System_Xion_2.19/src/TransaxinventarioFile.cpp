@@ -28,7 +28,7 @@ bool TransaxinventarioFile::grabarDatosInventario(TransaxInventario compra_venta
     p=fopen("Inventario.dat","rb");
     if(p==NULL) return 0;
 
-        fseek(p, pos*sizeof (TransaxInventario), 0);
+       // fseek(p, pos*sizeof (TransaxInventario), 0);
         fread(&vectorInventario[pos], sizeof (TransaxInventario), cant, p);
 
     fclose(p);
@@ -143,6 +143,11 @@ int TransaxinventarioFile::cantidadDeDatosComprasGrabadas()
     return cantidad;
 }
 
+
+
+
+
+
 //metodos para ventas
 
 TransaxInventario* TransaxinventarioFile::obtener_Datos_Ventas(){
@@ -194,6 +199,22 @@ int TransaxinventarioFile::cantidadDeDatosVentasGrabadas()
     fclose(p);
     return cantidad;
 }
+
+
+TransaxinventarioFile::buscaPosicionMaxdeIDenCompraVta(const char *id){
+int maxpos=0;
+TransaxInventario reg;
+int pos=0;
+
+while(leerCompra_vta(reg, pos)){
+        if (strcmp(id, reg.getTRID_Articulo()) == 0 && pos>maxpos){// busca el ultimo art comprado o vendido
+			maxpos=pos;
+        }
+        pos++;
+	}
+return maxpos;
+}
+
 
 
 

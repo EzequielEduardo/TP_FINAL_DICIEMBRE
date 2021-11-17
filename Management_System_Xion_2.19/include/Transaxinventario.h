@@ -8,7 +8,7 @@ class TransaxInventario
 {
 	private:
         char trid_Articulo[20];
-        char tipoTransax[10];
+        char tipoTransax[50];
         int trcantidad;
         float trprecioUnitario;
         Fecha fechaTransax;
@@ -24,7 +24,7 @@ class TransaxInventario
 	public:
 		//SETS
 		void setTRID_Articulo(const char* );
-        void setTipoTransax(bool);
+        void setTipoTransax(int);
         void setTRCantidad(int);
         void setTRprecioUnitario(float);
         void setFechaTransax(Fecha);

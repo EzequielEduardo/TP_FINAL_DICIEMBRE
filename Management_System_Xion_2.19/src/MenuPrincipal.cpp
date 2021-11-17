@@ -132,7 +132,6 @@ void MenuPrincipal::submenuMaestros()
 }
 
 
-
 void MenuPrincipal::submenuInventarios(){
     CompraVista obj1;
     VentaVista obj2;

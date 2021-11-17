@@ -13,49 +13,6 @@
 
 using namespace std;
 
-void VentaVista::menuVentas()
-{
-    int opc;
-    setlocale(LC_ALL,"Spanish");
-    system("color 02");
-
-    do
-    {
-        cout<<"MENU VENTAS"<<endl<<endl;
-        cout<<"1-CARGAR VENTAS"<<endl;
-        cout<<"0-VOLVER AL MENU ANTERIOR"<<endl<<endl;
-        cout<<"Ingresar Opcion: ";
-        cin>>opc;
-
-        system("cls");
-        switch(opc)
-        {
-
-        case 1:
-
-            if(cargarVentas()==true) cout<<"¡¡DATOS GUARDADOS CON EXITO!!"<<endl;
-            else cout<<"¡¡ERROR, NO SE PUDIERON GUARDAR LOS DATOS!!"<<endl;
-
-            system("pause");
-            system("cls");
-            break;
-
-        case 0:
-
-		break;
-
-        default:
-            break;
-
-        }
-
-    }
-    while(opc!=0);
-
-
-}
-
-
 bool VentaVista::cargarVentas()
 {
     CompraVista obj;
@@ -80,15 +37,17 @@ bool VentaVista::cargarVentas()
     cout << "Datos de la Venta:"<<endl;
     cout<<"Ingresar: "<<endl;
 
-    cout<<"ID del Articulo: ";
-    negocio.cargarCadena(cadena,20);
-    if(reg.ValidacionDeArticulo(cadena)) {venta.setTRID_Articulo(cadena);}
-        else {obj.messageValidacionCompra(reg.ValidacionDeArticulo(cadena));
-				return 0;}
-
     cout<<"Factura de Venta: ";
     negocio.cargarCadena(cadena,20);
     venta.setNroFactura(cadena);
+
+    cout<<"ID del Articulo: ";
+    negocio.cargarCadena(cadena,20);
+    if(reg.ValidacionDeArticulo(cadena)) {venta.setTRID_Articulo(cadena);}
+        else {obj.messageValidacionCompra();
+				return 0;}
+
+
 
 	cout<<"Categoria: ";
     negocio.cargarCadena(cadena,20);

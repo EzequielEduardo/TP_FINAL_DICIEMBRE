@@ -17,11 +17,11 @@
 		void TransaxInventario::setMarca(const char* cadena){strcpy(marca,cadena);}
 		void TransaxInventario::setStatus(bool _status){status=_status;}
 
-        void TransaxInventario::setTipoTransax(bool n){
-			//const char* venta[7]={ "venta\0"};
-            //const char* compra[7]={"compra\0"};
-               if(n==0)strcpy(tipoTransax,"venta\0");
-				if(n==1)strcpy(tipoTransax,"compra\0");
+        void TransaxInventario::setTipoTransax(int n){
+                if(n==0)strcpy(tipoTransax,"Venta\0");
+				if(n==1)strcpy(tipoTransax,"Compra\0");
+				if(n==2)strcpy(tipoTransax,"Modificacion de Compra\0");
+				if(n==3)strcpy(tipoTransax,"Modificacion de Venta\0");
             }
 
 

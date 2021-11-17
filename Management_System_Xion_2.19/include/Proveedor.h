@@ -20,8 +20,8 @@ class Proveedor:public Persona
         void setCondicionFiscal(const char *cadena);
 		void setCondicionDePago(const char *cadena);
 		void setFechadeIncorporacion(Fecha );
-        ///gets
 
+        ///gets
         const char* getCondicionFiscal();
 		const char* getCondicionDePago();
 		Fecha getFechadeIncorporacion();

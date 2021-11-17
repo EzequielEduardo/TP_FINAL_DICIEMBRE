@@ -67,7 +67,9 @@ char CODEART[20];
 			TransaxInventario obj(dia,mes,anio);
 
 			cout<<"Ingrese el ID del Articulo: "<<endl;
-			cin>>CODEART;
+
+			//cin>>CODEART;
+			obj1.cargarCadena(CODEART,20);
 			cout<<endl;
 			obj.setTRID_Articulo(CODEART);
 

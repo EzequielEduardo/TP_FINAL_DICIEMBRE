@@ -44,8 +44,8 @@ bool CompraVista::cargarCompras()
     cout<<"ID del Articulo: ";
         negocio.cargarCadena(cadena,20);
 
-        if(reg.ValidacionDeArticulo(cadena)) {compra.setTRID_Articulo(cadena);}
-        else {obj.messageValidacionCompra(reg.ValidacionDeArticulo(cadena));
+        if(reg.ValidacionDeArticulo(cadena)) {compra.setTRID_Articulo(cadena);}//VALIDACION ART
+        else {obj.messageValidacionCompra();
 				return 0;}
 
     cout<<"Categoria:";
@@ -182,7 +182,6 @@ TransaxInventario *vectorCompra=obj1.Cargar_Vector_de_Compras(); // vector que c
 				cout<<"Cantidad Vendida: "<<vectorCompra[x].getTRCantidad()<<endl;
 				cout<<"Precio de Articulo Comprado: "<<vectorCompra[x].getTRprecioUnitario()<<endl;
 				cout<<"Cantidad Valorizada: "<<vectorCompra[x].getTRValorizada()<<endl;
-				//cout<<"mes: "<<vectorCompra[x].getFechaTransax().getMes()<<endl;
 				cout<< "-----------------------------"<<endl;
 			}
 			if(strcmp(Invoice,vectorCompra[x].getNroFactura())==0 &&
@@ -229,7 +228,7 @@ void CompraVista::messageFacturaModifOK(){
 
 }
 
-void CompraVista::messageValidacionCompra(bool flagValidacion){
-			if(!flagValidacion) cout<<"Ingrese un Articulo Valido (cargar previamente en Maestro de Articulos"<<endl;
+void CompraVista::messageValidacionCompra(){
+			 cout<<"Ingrese un Articulo Valido (Cargar previamente en Maestro de Articulos) "<<endl;
 			system("pause");
 }

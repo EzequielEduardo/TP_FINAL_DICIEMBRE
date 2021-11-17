@@ -23,7 +23,7 @@ class Cliente:public Persona
         void setFechadeIncorporacion(Fecha );
 
         ///gets
-		//void gettersPersona();
+
         const char* getCondicionFiscal();
 		const char* getCondicionDeCobro();
 		Fecha getFechadeIncorporacion();

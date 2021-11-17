@@ -53,13 +53,13 @@ float ArticuloNegocio::ModificarPreciodeArt(const char * id){
 
 }
 
-Articulo* ArticuloNegocio::Cargar_Vector_de_Articulos()
+Articulo * ArticuloNegocio::Cargar_Vector_de_Articulos(Articulo* vectorArticulos)
 {
-    Articulo *vectorArticulos;
+    //Articulo *vectorArticulos;
     ArticuloFile archivo;
     vectorArticulos=archivo.obtener_Datos_Articulos();
 
-return vectorArticulos;
+//return vectorArticulos;
 }
 
 
@@ -75,11 +75,12 @@ int ArticuloNegocio::CantidadDeArticulos()
 
 void ArticuloNegocio::cargarCadena(char *pal, int tam){
 			int i;
-			fflush(stdin);
+			fflush(stdin);//vacio el buffer del teclado. Standar Input (stdin)
 			for(i=0;i<tam;i++){
 				pal[i]=cin.get();
 				if(pal[i]=='\n') break;
 				}
+
 				pal[i]='\0';
 				fflush(stdin);
-				}
+	}

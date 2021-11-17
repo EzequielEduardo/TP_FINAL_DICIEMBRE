@@ -50,7 +50,9 @@ void ArticuloVista::menuArticulos()
 		case 3:
 		cout<<"INGRESE ID DE ARTICULO A REVALUAR: "<<endl;
 		char IDArticulo[20];
-		cin>>IDArticulo;
+		ArticuloNegocio negocio;
+		negocio.cargarCadena(IDArticulo,20);
+		//cin>>IDArticulo;
 
 		ArticuloNegocio obj;
 		obj.ModificarPreciodeArt(IDArticulo);
@@ -112,7 +114,8 @@ void ArticuloVista::mostrarArticulos()
     ArticuloNegocio negocio;
     Articulo *vectorArticulos;
 
-    vectorArticulos=negocio.Cargar_Vector_de_Articulos();///get_clientes
+    vectorArticulos=negocio.Cargar_Vector_de_Articulos(vectorArticulos);
+
 	cout<<"MAESTRO DE ARTICULOS"<<endl;
         for(int x;x<negocio.CantidadDeArticulos();x++){
         cout<< "ID del Articulo: "<<vectorArticulos[x].getID_Articulo() <<endl;
@@ -123,13 +126,13 @@ void ArticuloVista::mostrarArticulos()
 
     delete vectorArticulos;
 }
+
 float ArticuloVista::askNewPrice(){
 			float pu;
 			cout<<"INGRESE EL PRECIO NUEVO:";
 			cin>>pu;
 			return pu;
 }
-
 
 void ArticuloVista::messageCargaOK(){
 			cout<<"Cambio de precio"<<endl;
